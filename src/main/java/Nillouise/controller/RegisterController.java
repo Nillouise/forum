@@ -2,8 +2,10 @@ package Nillouise.controller;
 
 import Nillouise.model.User;
 import Nillouise.service.RegistService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,8 +26,10 @@ public class RegisterController
     RegistService registService;
 
     @RequestMapping(value = "register")
-    public String page()
+    public String page(Model model)
     {
+        model.addAttribute("user",new User());
+
         return "WEB-INF/register.jsp";
     }
 
@@ -34,10 +38,9 @@ public class RegisterController
     {
         System.out.println(user);
 
-
         if(!registService.addUser(user)||errors.hasErrors())
         {
-            return "redirect:/register";
+            return "WEB-INF/register.jsp";
         }else{
             return "redirect:/index.jsp";
         }

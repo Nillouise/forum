@@ -12,14 +12,14 @@
     <title>Register</title>
 </head>
 <body>
-<form action="register.do" method="post" id="user">
+<form:form commandName="user" action="register.do" method="post" id="user">
     username:
-    <input type="text" id="username" name="username" ><br/>
+    <form:input path="username" /><br/>
     <form:errors path="username" cssStyle="color:red"/>
     password:
     <input type="password" id="password" name="password" ><br/>
     <input type="submit" value="submit">
-</form>
+</form:form>
 
 </body>
 </html>
