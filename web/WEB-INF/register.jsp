@@ -15,12 +15,13 @@
 <body>
 <form:form commandName="user" action="register.do" method="post" id="user">
     username:
-    <form:input path="username" /><br/>
+    <form:input path="username" />
     <form:errors path="username" cssStyle="color:red"/>
+    <br/>
     password:
-    <input type="password" id="password" name="password" ><br/>
-    <input type="text" name="loginedtime" id="loginedtime">
+    <input type="password" id="password" name="password">
     <input type="submit" value="submit">
+    <br/>
 </form:form>
 <spring:message code="usernamelength"></spring:message>
 <%-- erros 标签好像一定要把这个form都用spring的form渲染才能正确显示错误 --%>

@@ -36,7 +36,13 @@ public class RegisterController
     {
         System.out.println(user);
 
-        if(!registService.addUser(user)||errors.hasErrors())
+        if(!registService.addUser(user))
+        {
+            //第一个参数是field，也就是绑定到那个user的field中
+            errors.rejectValue("username","username.duplicate","duplicate");
+        }
+
+        if(errors.hasErrors())
         {
             return "WEB-INF/register.jsp";
         }else{

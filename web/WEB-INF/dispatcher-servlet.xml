@@ -15,6 +15,5 @@
                 <value>message.message</value>
             </list>
         </property>
-
     </bean>
 </beans>

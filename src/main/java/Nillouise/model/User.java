@@ -52,12 +52,11 @@ public class User
     }
 
     private int id;
-    @NotNull
+    //只要在这里加了这么一句，就会自动调用对应的formmatter，都不需要在xml里特别注解，也不需要导入特别的包
     @DateTimeFormat(pattern = "yy-MM-dd")
     private Date loginedtime;
     @Length(min = 4,max = 10,message = "usernamelength error")
     private String username="";
-
     @Length(min = 4,max = 10,message = "password length error")
     private String password="";
 }
