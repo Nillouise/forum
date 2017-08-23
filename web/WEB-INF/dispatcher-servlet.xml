@@ -8,4 +8,13 @@
     <context:component-scan base-package="Nillouise.controller" />
     <context:component-scan base-package="Nillouise.service"/>
 
+    <!-- 国际化 -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>message.message</value>
+            </list>
+        </property>
+
+    </bean>
 </beans>

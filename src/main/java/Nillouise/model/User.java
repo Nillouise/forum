@@ -43,6 +43,6 @@ public class User
 
     private int id;
     @Length(min = 4,max = 10,message = "usernamelength error")
-    private String username;
-    private String password;
+    private String username="";
+    private String password="";
 }
