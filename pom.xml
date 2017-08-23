@@ -14,8 +14,13 @@
             <artifactId>spring-webmvc</artifactId>
             <version>4.3.10.RELEASE</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+        <!--这个jsr303验证器，虽然不需要改动xml文件就能自动使用了，但是需要部署到服务器才行 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.1.Final</version>
+        </dependency>
+
     </dependencies>
-
-
-
 </project>

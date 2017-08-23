@@ -11,7 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  <a href="/register">注册</a> 
+  <a href="/register">注册</a>
   $END$
   </body>
 </html>
