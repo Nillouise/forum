@@ -1,19 +1,18 @@
 package Nillouise.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by win7x64 on 2017/8/23.
  */
-public class Thread
+public class Tiezi
 {
     private int id;
-    private String title;
-    private String content;
+    private String title="";
+    private String content="";
     private int userid;
-    private List<Floor> floors;
-
-
+    private List<Floor> floors=new ArrayList<Floor>();
 
     public int getId()
     {

@@ -8,7 +8,7 @@ import java.util.List;
 public class Floor
 {
     private int id;
-    private String content;
+    private String content="";
     private int userid;
     private int threadid;
 

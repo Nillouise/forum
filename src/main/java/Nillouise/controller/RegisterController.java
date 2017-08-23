@@ -46,7 +46,7 @@ public class RegisterController
         {
             return "WEB-INF/register.jsp";
         }else{
-            return "redirect:/index.jsp";
+            return "redirect:/index";
         }
     }
 }

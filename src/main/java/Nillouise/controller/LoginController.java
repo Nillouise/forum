@@ -7,13 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import static Nillouise.tool.SessionString.userInfo;
+import static Nillouise.tool.RequestString.userInfo;
 
 
 @Controller
@@ -47,7 +46,7 @@ public class LoginController
             return "WEB-INF/login.jsp";
         }else {
             session.setAttribute(userInfo,user);
-            return "index.jsp";
+            return "redirect:/index";
         }
     }
 
