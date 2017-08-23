@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import static Nillouise.tool.RequestString.alltiezi;
 
-/**
- * Created by win7x64 on 2017/8/23.
- */
+
+
+
 @Controller
 public class IndexController
 {

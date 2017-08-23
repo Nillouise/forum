@@ -39,11 +39,11 @@ public class TieziService
         return tieziList;
     }
 
-    public List<Floor> getFloors(int Threadid)
+    public List<Floor> getFloors(int Tieziid)
     {
         for (Tiezi tiezi : tieziList)
         {
-            if(tiezi.getId()==Threadid)
+            if(tiezi.getId()==Tieziid)
             {
                 List<Floor> floors = tiezi.getFloors();
                 return floors;
@@ -51,4 +51,18 @@ public class TieziService
         }
         return new ArrayList<Floor>();
     }
+
+    public Tiezi getTiezi(int Tieziid)
+    {
+        for (Tiezi tiezi : tieziList)
+        {
+            if(tiezi.getId()==Tieziid)
+            {
+
+                return tiezi;
+            }
+        }
+        return null;
+    }
+
 }

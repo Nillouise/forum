@@ -16,17 +16,17 @@
   ${userinfo}
   <a href="/register">注册</a>
   <a href="/login">登录</a>
+  <a href="/logout">注销</a>
 
   <table>
       <tr><th>Title</th><th>userid</th></tr>
 
       <c:forEach items="${alltiezi}" var="t">
           <tr>
-              <td>${t.title}</td>
+              <td><a href="/selecttiezi?tieziid=${t.id}">${t.title}</a></td>
               <td>${t.userid}</td>
           </tr>
       </c:forEach>
-
   </table>
 
 

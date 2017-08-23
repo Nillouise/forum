@@ -59,4 +59,12 @@ public class LoginController
         return "WEB-INF/login.jsp";
     }
 
+    @RequestMapping(value = "/logout")
+    public String logout(HttpSession httpSession)
+    {
+        httpSession.invalidate();
+        return "redirect:/index";
+    }
+
+
 }
