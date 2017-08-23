@@ -13,19 +13,24 @@
     <title>${tiezi.title}</title>
 </head>
 <body>
-<h3>${tiezi.title}</h3>
-<table>
-    <th>
-        <td>${tiezi.userid}</td>
-        <td>${tiezi.content}</td>
-    </th>
-    <c:forEach items="${tiezi.floors}"  var="i">
-        <tr>
-            <td>${i.userid}</td>
-            <td>${i.content}</td>
-        </tr>
-    </c:forEach>
+    <h3>${tiezi.title}</h3>
+    <table>
+        <th>
+            <td>${tiezi.userid}</td>
+            <td>${tiezi.content}</td>
+        </th>
+        <c:forEach items="${tiezi.floors}"  var="i">
+            <tr>
+                <td>${i.userid}</td>
+                <td>${i.content}</td>
+            </tr>
+        </c:forEach>
 
-</table>
+    </table>
+    <form:form commandName="floor" action="addfloor.do" method="post" id="floor">
+        <input type="hidden" name="tieziid" value="${tiezi.id}"/>
+        <form:textarea path="content"/><br/>
+        <input type="submit"/>
+    </form:form>
 </body>
 </html>

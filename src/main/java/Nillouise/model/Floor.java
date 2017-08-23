@@ -1,7 +1,5 @@
 package Nillouise.model;
 
-import java.util.List;
-
 /**
  * Created by win7x64 on 2017/8/23.
  */
@@ -10,7 +8,7 @@ public class Floor
     private int id;
     private String content="";
     private int userid;
-    private int threadid;
+    private int tieziid;
 
     public int getId()
     {
@@ -42,13 +40,13 @@ public class Floor
         this.userid = userid;
     }
 
-    public int getThreadid()
+    public int getTieziid()
     {
-        return threadid;
+        return tieziid;
     }
 
-    public void setThreadid(int threadid)
+    public void setTieziid(int tieziid)
     {
-        this.threadid = threadid;
+        this.tieziid = tieziid;
     }
 }

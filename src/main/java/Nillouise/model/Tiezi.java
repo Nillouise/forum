@@ -14,6 +14,13 @@ public class Tiezi
     private int userid;
     private List<Floor> floors=new ArrayList<Floor>();
 
+    public boolean addFloor(Floor floor)
+    {
+        floors.add(floor);
+        return true;
+    }
+
+
     public int getId()
     {
         return id;
