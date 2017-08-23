@@ -19,6 +19,7 @@
     <form:errors path="username" cssStyle="color:red"/>
     password:
     <input type="password" id="password" name="password" ><br/>
+    <input type="text" name="loginedtime" id="loginedtime">
     <input type="submit" value="submit">
 </form:form>
 <spring:message code="usernamelength"></spring:message>

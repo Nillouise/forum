@@ -6,13 +6,11 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by win7x64 on 2017/8/23.
- */
+
 @Service
 public class RegistService
 {
-    static List<User> userList = new ArrayList<User>();
+    public static List<User> userList = new ArrayList<User>();
 
     public boolean addUser(User user)
     {

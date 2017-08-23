@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.imageio.spi.RegisterableService;
 import javax.validation.Valid;
 
-/**
- * Created by win7x64 on 2017/8/23.
- */
+
 @Controller
 public class RegisterController
 {
