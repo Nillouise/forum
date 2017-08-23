@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
+  ${userinfo}
   <a href="/register">注册</a>
   $END$
   </body>
