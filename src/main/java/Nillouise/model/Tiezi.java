@@ -3,9 +3,7 @@ package Nillouise.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by win7x64 on 2017/8/23.
- */
+
 public class Tiezi
 {
     private int id;
@@ -14,11 +12,7 @@ public class Tiezi
     private int userid;
     private List<Floor> floors=new ArrayList<Floor>();
 
-    public boolean addFloor(Floor floor)
-    {
-        floors.add(floor);
-        return true;
-    }
+
 
 
     public int getId()

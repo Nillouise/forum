@@ -67,7 +67,7 @@ public class TieziController
         }
         if(tiezi != null)
         {
-            tiezi.addFloor(floor);
+            tieziService.addFloor(user,tieziid,floor);
             return "redirect:/selecttiezi?tieziid="+tiezi.getId();
         }else{
             return "redirect:/index";

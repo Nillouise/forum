@@ -13,6 +13,9 @@ public class TieziService
 {
     public static List<Tiezi> tieziList = new ArrayList<Tiezi>();
 
+    public static List<Floor> floorList = new ArrayList<Floor>();
+
+
     public boolean addThread(User user,Tiezi tiezi)
     {
         tiezi.setUserid(user.getId());
@@ -21,14 +24,19 @@ public class TieziService
         return true;
     }
 
-    public boolean addFloor(User user,int Threadid, Floor floor)
+    public boolean addFloor(User user,int Tieziid, Floor floor)
     {
+
         for (Tiezi tiezi : tieziList)
         {
-            if(tiezi.getId()==Threadid)
+            if(tiezi.getId()==Tieziid)
             {
                 List<Floor> floors = tiezi.getFloors();
+                floor.setTieziid(Tieziid);
+                floor.setId(floorList.size());
+                floor.setUserid(user.getId());
                 floors.add(floor);
+                floorList.add(floor);
                 tiezi.setFloors(floors);
             }
         }
