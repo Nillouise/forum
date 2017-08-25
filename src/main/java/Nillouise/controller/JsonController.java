@@ -31,9 +31,7 @@ public class JsonController
     public void dianzan(@RequestBody receivejson floorid, HttpServletResponse response) throws IOException
     {
 //        Integer floorid = json.floorid;
-
         Floor floor = tieziService.getFloor(floorid.getFloorid());
-
         if(floor==null)
         {
             response.setContentType("text/html;charset=UTF-8");
@@ -55,15 +53,12 @@ public class JsonController
 //      Integer floorid = json.floorid;
 
         Floor floor = tieziService.getFloor(floorid.getFloorid());
-
         if(floor==null)
         {
             response.setContentType("text/html;charset=UTF-8");
             response.getWriter().println("0");
         }
-
         floor.setCai(floor.getCai()+1);
-
         ObjectMapper mapper = new ObjectMapper();
 
         response.setContentType("text/html;charset=UTF-8");
