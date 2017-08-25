@@ -20,6 +20,18 @@ public class User
     @Length(min = 4,max = 10,message = "password length error")
     private String password="";
 
+    private Document avatar;
+
+    public Document getAvatar()
+    {
+        return avatar;
+    }
+
+    public void setAvatar(Document avatar)
+    {
+        this.avatar = avatar;
+    }
+
     public int getId()
     {
         return id;

@@ -13,7 +13,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  ${userinfo}
+  <a href="/userinfo"> ${userinfo}</a>
   <a href="/register">注册</a>
   <a href="/login">登录</a>
   <a href="/logout">注销</a>

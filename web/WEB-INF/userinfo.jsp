@@ -12,16 +12,16 @@
 </head>
 <body>
 
-userid: ${user.id}<br/>
-username:${user.username}<br/>
-password:${user.password}<br/>
+userid: ${userinfo.id}<br/>
+username:${userinfo.username}<br/>
+password:${userinfo.password}<br/>
 
 <form action="/upload/avatar.do" enctype="multipart/form-data" method="post">
     请选择文件:
     <input type="file" name="file">
     <input type="submit" value="上传">
 </form>
-
+<img src="images/${userinfo.avatar.filename}"/>
 
 
 </body>
