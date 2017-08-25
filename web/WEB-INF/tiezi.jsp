@@ -37,13 +37,12 @@
             var json = {};
             json["floorid"]=e.id.substr(3);
 
-            function receive(date)
+            function receive(data)
             {
-
+                e.value = "赞"+data;
             }
 
             requestZanAct("dianzan",json,receive);
-
         }
 
         function diancai(e)
@@ -51,9 +50,9 @@
             var json = {};
             json["floorid"]=e.id.substr(3);
 
-            function receive(date)
+            function receive(data)
             {
-
+                e.value = "踩"+data;
             }
 
             requestZanAct("diancai",json,receive);
@@ -62,6 +61,7 @@
     </script>
 </head>
 <body>
+<a href="/">首页</a>
     <h3>${tiezi.title}</h3>
     <table>
         <th>

@@ -73,4 +73,16 @@ public class TieziService
         return null;
     }
 
+    public Floor getFloor(int Floorid)
+    {
+        for (Floor f:floorList)
+        {
+            if(f.getId()==Floorid)
+            {
+                return f;
+            }
+        }
+        return null;
+    }
+
 }

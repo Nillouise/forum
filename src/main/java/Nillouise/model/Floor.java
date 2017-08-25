@@ -10,6 +10,29 @@ public class Floor
     private int userid;
     private int tieziid;
 
+    private int zan=0;
+    private int cai=0;
+
+    public int getZan()
+    {
+        return zan;
+    }
+
+    public void setZan(int zan)
+    {
+        this.zan = zan;
+    }
+
+    public int getCai()
+    {
+        return cai;
+    }
+
+    public void setCai(int cai)
+    {
+        this.cai = cai;
+    }
+
     public int getId()
     {
         return id;
