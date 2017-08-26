@@ -16,7 +16,7 @@
     <script>
         function requestZanAct(act,sendjson,callbackfun)
         {
-            $.ajax("${pageContext.request.contextPath}/json/"+act,
+            $.ajax("${pageContext.request.contextPath}/json/"+act+".do",
                 {
                     dataType:"json",
                     type:"post",

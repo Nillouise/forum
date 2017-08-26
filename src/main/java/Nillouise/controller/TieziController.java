@@ -51,6 +51,7 @@ public class TieziController
         Tiezi tiezi = tieziService.getTiezi(tieziid);
         model.addAttribute("tiezi",tiezi);
 
+
         return "WEB-INF/tiezi.jsp";
     }
 

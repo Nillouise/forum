@@ -32,6 +32,9 @@ public class IndexController
         return "index.jsp";
     }
 
-
+    public String test()
+    {
+        return "";
+    }
 
 }

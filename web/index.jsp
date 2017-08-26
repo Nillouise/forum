@@ -20,7 +20,6 @@
 
   <table>
       <tr><th>Title</th><th>userid</th></tr>
-
       <c:forEach items="${alltiezi}" var="t">
           <tr>
               <td><a href="/selecttiezi?tieziid=${t.id}">${t.title}</a></td>

@@ -27,7 +27,7 @@ public class JsonController
     @Autowired
     TieziService tieziService;
 
-    @RequestMapping(value = "/dianzan",method = RequestMethod.POST)
+    @RequestMapping(value = "/dianzan.do",method = RequestMethod.POST)
     public void dianzan(@RequestBody receivejson floorid, HttpServletResponse response) throws IOException
     {
 //        Integer floorid = json.floorid;
@@ -47,7 +47,7 @@ public class JsonController
 //        response.getWriter().println("100");
     }
 
-    @RequestMapping(value = "/diancai",method = RequestMethod.POST)
+    @RequestMapping(value = "/diancai.do",method = RequestMethod.POST)
     public void diancai(@RequestBody receivejson floorid, HttpServletResponse response) throws IOException
     {
 //      Integer floorid = json.floorid;

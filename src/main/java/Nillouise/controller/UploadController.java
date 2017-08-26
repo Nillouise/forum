@@ -28,7 +28,7 @@ public class UploadController
             return "error.html";
         }
 
-        String path = request.getServletContext().getRealPath("/images/");
+        String path = request.getServletContext().getRealPath("/images/avatars/");
 
         String filename = file.getOriginalFilename();
         File filePath = new File(path,filename);
@@ -44,7 +44,7 @@ public class UploadController
         Document doc = new Document();
         doc.setFilename(newFilename);
         doc.setOriginname(filename);
-        doc.setPath("/images/");
+        doc.setPath("/images/avatars/");
         user.setAvatar(doc);
 
         return "redirect:/userinfo";

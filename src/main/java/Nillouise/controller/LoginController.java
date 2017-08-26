@@ -23,16 +23,16 @@ public class LoginController
 
     //在这里注释modelattribute，返回的并不是视图的名称（也不能转向）
     //似乎在这里进行权限检查并转向，其实不合适。
-    @ModelAttribute
-    public String check(HttpSession session,String form)
-    {
-        if(session.getAttribute("user")!=null)
-        {
-            return "redirect:/index.jsp";
-        }else {
-            return form;
-        }
-    }
+//    @ModelAttribute
+//    public String check(HttpSession session,String form)
+//    {
+//        if(session.getAttribute("user")!=null)
+//        {
+//            return "redirect:/index.jsp";
+//        }else {
+//            return form;
+//        }
+//    }
 
     @RequestMapping(value = "/login.do")
     public String loginDo(@Valid User user, Errors errors,HttpSession session)
