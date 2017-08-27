@@ -25,6 +25,7 @@
     <br/>
     <input type="submit" value="submit">
     <br/>
+    <img src="/verificationcode?exp=1" type="image" alt="">
 </form:form>
 
 

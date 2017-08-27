@@ -27,6 +27,7 @@ public class RegistService
                 return false;
             }
         }
+        user.setId(userList.size());
         userList.add(user);
         return true;
     }
