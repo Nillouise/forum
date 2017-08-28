@@ -22,6 +22,17 @@ public class User
 
     private Document avatar;
 
+    public boolean copyFrom(User source)
+    {
+        id=source.id;
+        username=source.username;
+        password=source.password;
+        loginedtime=source.loginedtime;
+        return true;
+    }
+
+
+
     public Document getAvatar()
     {
         return avatar;

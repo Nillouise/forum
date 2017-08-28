@@ -9,11 +9,24 @@ public class Tiezi
     private int id;
     private String title="";
     private String content="";
-    private int userid;
+    private int userid=-1;
     private List<Floor> floors=new ArrayList<Floor>();
+    private User user;
+
+    public User getUser()
+    {
+        if(userid!=-1)
+        {
 
 
+        }
+        return user;
+    }
 
+    public void setUser(User user)
+    {
+        this.user = user;
+    }
 
     public int getId()
     {

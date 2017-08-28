@@ -14,7 +14,7 @@
     <title><spring:message code="logintitle"></spring:message></title>
 </head>
 <body>
-
+<%--好像一定要加name，才会post属性到服务器 --%>
 <form:form commandName="user" action="login.do" method="post" id="user">
     username:
     <form:input path="username" />
@@ -23,9 +23,10 @@
     password:
     <input type="password" id="password" name="password">
     <br/>
+    <img src="/verificationcode?exp=1" type="image" alt="">
+    <input type="text" id="captcha" name="captcha"/><br/>
     <input type="submit" value="submit">
     <br/>
-    <img src="/verificationcode?exp=1" type="image" alt="">
 </form:form>
 
 

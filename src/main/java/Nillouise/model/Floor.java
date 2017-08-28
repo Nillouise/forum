@@ -7,11 +7,25 @@ public class Floor
 {
     private int id;
     private String content="";
-    private int userid;
+    private int userid=-1;
     private int tieziid;
 
     private int zan=0;
     private int cai=0;
+    private User user;
+
+    public User getUser()
+    {
+
+
+        return user;
+    }
+
+    public void setUser(User user)
+    {
+        this.user = user;
+    }
+
 
     public int getZan()
     {

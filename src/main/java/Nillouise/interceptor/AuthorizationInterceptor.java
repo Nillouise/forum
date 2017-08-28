@@ -17,14 +17,15 @@ public class AuthorizationInterceptor implements HandlerInterceptor
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception
     {
+        //已登录
         User user = (User)request.getSession().getAttribute(userInfo);
         if(user!=null)
         {
             return true;
         }
 
+        //跳过不用权限检查在（IGNORE_URI）的页面
         String servletPath = request.getServletPath();
-
         for (String s : IGNORE_URI)
         {
             if(servletPath.contains(s))
@@ -33,6 +34,7 @@ public class AuthorizationInterceptor implements HandlerInterceptor
             }
         }
 
+        //跳过非.do的页面
         String s = servletPath.substring(servletPath.lastIndexOf(".")+1);
         if(servletPath.substring(servletPath.lastIndexOf(".")+1).equals("do"))
         {

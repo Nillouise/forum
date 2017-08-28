@@ -5,9 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * Created by win7x64 on 2017/8/23.
- */
+
 @Service
 public class LoginService
 {
@@ -19,6 +17,7 @@ public class LoginService
             {
                 if(i.getPassword().equals(user.getPassword()))
                 {
+                    user.copyFrom(i);
                     return true;
                 }else{
                     return false;

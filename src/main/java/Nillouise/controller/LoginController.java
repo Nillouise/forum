@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -44,29 +46,34 @@ public class LoginController
 //        }
 //    }
 
-    //再入验证码
-    @ModelAttribute
-    public void check(HttpSession session)
+    //刷新验证码
+    public void refreshCode(HttpSession session)
     {
-        String code = (String)session.getAttribute(verificationcode);
-        if(code==null)
+
+        Random random = new Random();
+        char[] codeChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456".toCharArray();
+        String captcha = "";
+        for (int i = 0; i < 4; i++)
         {
-            Random random = new Random();
-            char[] codeChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456".toCharArray();
-            String captcha = "";
-            for (int i = 0; i < 4; i++)
-            {
-                captcha+=codeChar[random.nextInt(codeChar.length)];
-            }
-            session.setAttribute(verificationcode,captcha);
+            captcha+=codeChar[random.nextInt(codeChar.length)];
         }
+        session.setAttribute(verificationcode,captcha);
         return;
     }
 
 
     @RequestMapping(value = "/login.do")
-    public String loginDo(@Valid User user, Errors errors,HttpSession session)
+    public String loginDo(@Valid User user, Errors errors, HttpSession session, @RequestParam String captcha)
     {
+        String corCode = (String) session.getAttribute(verificationcode);
+        if(corCode==null)
+        {
+            return "WEB-INF/login.jsp";
+        }else if(!corCode.equals(captcha)){
+            return "WEB-INF/login.jsp";
+        }
+
+
         if(!loginService.check(user))
         {
             errors.rejectValue("username","userinconsistent","user inconsistent");
@@ -99,6 +106,7 @@ public class LoginController
     @RequestMapping(value = verificationcode)
     public void verificationcode(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException
     {
+        refreshCode(session);
         int width = 63;
         int height = 37;
         response.setHeader("Pragma", "No-cache");

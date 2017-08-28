@@ -1,8 +1,6 @@
 package Nillouise.model;
 
-/**
- * Created by win7x64 on 2017/8/25.
- */
+
 public class Document
 {
     String path;
