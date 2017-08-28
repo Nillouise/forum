@@ -23,7 +23,9 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="UserMapper.xml"/>
+        <!--<mapper resource="UserMapper.xml"/>-->
+        <mapper class="Nillouise.dao.UserDao"/>
+        <mapper resource="mapper/TieziMapper.xml"/>
         <!--<mapper class="Nillouise.mapper.UserInfoMapper"/>-->
         <!--<mapper url="file:///main/java/Nillouise/mapper/UserInfo.xml"></mapper>-->
     </mappers>
