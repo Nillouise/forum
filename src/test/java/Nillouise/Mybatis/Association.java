@@ -66,7 +66,8 @@ public class Association
         TieziDao userDao = session.getMapper(Nillouise.dao.TieziDao.class);
 
         Tiezi tiezi = userDao.selecttiezi(1);
-        System.out.println(tiezi);
-
+//        tiezi.getFloors();
+//        System.out.println(tiezi);
+        session.close();
     }
 }

@@ -5,6 +5,13 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <settings>
+        <!-- 要开延迟加载（延迟才读入另外一个表的数据），只需要加下面这两条设置（当然也要在mapper那里设置一下） -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+
     <typeAliases>
         <package name="Nillouise"/>
     </typeAliases>
