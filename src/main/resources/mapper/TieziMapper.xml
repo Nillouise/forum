@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Nillouise.dao.TieziDao">
+<mapper namespace="Nillouise.dao.TieziMapper">
     <select id="selectUser" resultType="Nillouise.model.User">
         select * from user_inf where id = #{id}
     </select>
@@ -22,7 +22,7 @@
         <result property="userid" column="userid"/>
         <collection property="floors" javaType="ArrayList"
                     column="id" ofType="Nillouise.model.Tiezi"
-                    fetchType="lazy" select="Nillouise.dao.TieziDao.selectfloor">
+                    fetchType="lazy" select="Nillouise.dao.TieziMapper.selectfloor">
             <id property="id" column="id"/>
             <result property="content" column="content"/>
             <result property="userid" column="userid"/>

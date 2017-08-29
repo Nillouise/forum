@@ -21,7 +21,7 @@ password:${userinfo.password}<br/>
     <input type="file" name="file">
     <input type="submit" value="上传">
 </form>
-<img src="images/avatars/${userinfo.avatar.filename}"/>
+<img src="images/avatars/${userinfo.avatar.savename}"/>
 
 
 </body>

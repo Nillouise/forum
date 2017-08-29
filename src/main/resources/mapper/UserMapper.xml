@@ -3,16 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Nillouise.dao.UserMapper">
+    <select id="selectDocument" resultType="Nillouise.model.Document">
+        select * from document_inf where id = #{id}
+    </select>
+
     <resultMap id="userRM" type="Nillouise.model.User">
         <id property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="password" column="password"/>
         <result property="avatarid" column="avatarid"/>
         <association property="avatar" column="avatarid"
-                     fetchType="lazy" select="Nillouise.dao.DocumentMapper.selectDocument"/>
+                     fetchType="lazy" select="selectDocument"/>
     </resultMap>
 
-    <select id="selectUser" resultMap="Nillouise.dao.UserMapper.userRM">
+    <select id="selectUser"  resultMap="Nillouise.dao.UserMapper.userRM">
         select * from user_inf where id = #{id}
     </select>
 

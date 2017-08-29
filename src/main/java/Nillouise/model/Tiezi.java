@@ -13,13 +13,10 @@ public class Tiezi
     private List<Floor> floors=new ArrayList<Floor>();
     private User user;
 
+
+
     public User getUser()
     {
-        if(userid!=-1)
-        {
-
-
-        }
         return user;
     }
 

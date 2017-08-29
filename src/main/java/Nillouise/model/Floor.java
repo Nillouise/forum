@@ -14,10 +14,20 @@ public class Floor
     private int cai=0;
     private User user;
 
+    private Tiezi tiezi;
+
+    public Tiezi getTiezi()
+    {
+        return tiezi;
+    }
+
+    public void setTiezi(Tiezi tiezi)
+    {
+        this.tiezi = tiezi;
+    }
+
     public User getUser()
     {
-
-
         return user;
     }
 

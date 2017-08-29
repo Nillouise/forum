@@ -4,9 +4,42 @@ package Nillouise.model;
 public class Document
 {
     String path;
-    String filename;
+    String savename;
     String originname;
     int id;
+    String uses;
+    int userid;
+    User user;
+
+    public User getUser()
+    {
+        return user;
+    }
+
+    public void setUser(User user)
+    {
+        this.user = user;
+    }
+
+    public String getUses()
+    {
+        return uses;
+    }
+
+    public void setUses(String uses)
+    {
+        this.uses = uses;
+    }
+
+    public int getUserid()
+    {
+        return userid;
+    }
+
+    public void setUserid(int userid)
+    {
+        this.userid = userid;
+    }
 
     public String getPath()
     {
@@ -18,14 +51,14 @@ public class Document
         this.path = path;
     }
 
-    public String getFilename()
+    public String getSavename()
     {
-        return filename;
+        return savename;
     }
 
-    public void setFilename(String filename)
+    public void setSavename(String savename)
     {
-        this.filename = filename;
+        this.savename = savename;
     }
 
     public String getOriginname()

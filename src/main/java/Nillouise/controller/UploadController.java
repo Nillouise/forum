@@ -42,7 +42,7 @@ public class UploadController
         file.transferTo(new File(path+newFilename));
         User user = (User)session.getAttribute(userInfo);
         Document doc = new Document();
-        doc.setFilename(newFilename);
+        doc.setSavename(newFilename);
         doc.setOriginname(filename);
         doc.setPath("/images/avatars/");
         user.setAvatar(doc);

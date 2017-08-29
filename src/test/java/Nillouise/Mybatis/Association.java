@@ -1,7 +1,7 @@
 package Nillouise.Mybatis;
 
-import Nillouise.dao.TieziDao;
-import Nillouise.dao.UserDao;
+import Nillouise.dao.TieziMapper;
+import Nillouise.dao.UserMapper;
 import Nillouise.model.Tiezi;
 import Nillouise.model.User;
 import org.apache.ibatis.io.Resources;
@@ -12,11 +12,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.SocketHandler;
 
-/**
- * Created by win7x64 on 2017/8/28.
- */
+
 public class Association
 {
     @Test
@@ -48,7 +45,7 @@ public class Association
                 new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
 
-        UserDao userDao = session.getMapper(Nillouise.dao.UserDao.class);
+        UserMapper userDao = session.getMapper(UserMapper.class);
 
         User user = userDao.selectUser(1);
         System.out.println(user);
@@ -63,11 +60,40 @@ public class Association
                 new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
 
-        TieziDao userDao = session.getMapper(Nillouise.dao.TieziDao.class);
+        TieziMapper userDao = session.getMapper(TieziMapper.class);
 
         Tiezi tiezi = userDao.selecttiezi(1);
+
+        Thread.sleep(3000);
+
+        tiezi.getFloors();
+//        System.out.println(tiezi);
+        session.close();
+    }
+
+    @Test
+    public void findUser() throws Exception
+    {
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory =
+                new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession session = sqlSessionFactory.openSession();
+
+        UserMapper userDao = session.getMapper(UserMapper.class);
+
+        User user1 = userDao.selectUser(1);
+
+        User user = userDao.findUser("test1","test1");
+
+        Thread.sleep(3000);
+
 //        tiezi.getFloors();
 //        System.out.println(tiezi);
         session.close();
     }
+
+
+
+
 }
