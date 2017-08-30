@@ -5,18 +5,64 @@ import Nillouise.dao.UserMapper;
 import Nillouise.model.Tiezi;
 import Nillouise.model.User;
 import org.apache.ibatis.io.Resources;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.Reader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import org.apache.ibatis.jdbc.ScriptRunner;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 
 public class Association
 {
+    @Before
+    public void runsql() throws ClassNotFoundException, SQLException
+    {
+
+        String aSQLScriptFilePath = "initsql.sql";
+
+        // Create MySql Connection
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/forum?characterEncoding=UTF-8&serverTimezone=UTC", "root", "admin");
+        Statement stmt = null;
+
+        try {
+            // Initialize object for ScripRunner
+            ScriptRunner sr = new ScriptRunner(con);
+
+            // Give the input file to Reader
+//            Reader reader = new BufferedReader(
+//                    new FileReader(aSQLScriptFilePath));
+//这里一定要加/ 变成/initsql.sql才能加载文件
+            Reader reader = new BufferedReader(
+                    new InputStreamReader(getClass().getResourceAsStream("/initsql.sql"))
+            );
+            // Exctute script
+            sr.runScript(reader);
+
+        } catch (Exception e) {
+            System.err.println("Failed to Execute" + aSQLScriptFilePath
+                    + " The error is " + e.getMessage());
+        }
+    }
+
+
+
     @Test
     public void test1() throws IOException
     {
@@ -132,6 +178,12 @@ public class Association
         session.commit();
         session.close();
 
+    }
+
+    @Test
+    public void testMapper()
+    {
+        assert (5-1==1);
     }
 
 }
