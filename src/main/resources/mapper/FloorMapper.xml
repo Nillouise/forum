@@ -7,7 +7,7 @@
         select * from floor_inf where tieziid = #{id}
     </select>
 
-    <insert id="addFloor" parameterType="Nillouise.model.Floor">
+    <insert id="addFloor" parameterType="Nillouise.model.Floor" keyProperty="id" useGeneratedKeys="true">
         insert floor_inf set userid=#{userid},tieziid=#{tieziid},content=#{content}
     </insert>
 

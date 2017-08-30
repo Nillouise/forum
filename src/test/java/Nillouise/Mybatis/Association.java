@@ -1,7 +1,11 @@
 package Nillouise.Mybatis;
 
+import Nillouise.dao.DocumentMapper;
+import Nillouise.dao.FloorMapper;
 import Nillouise.dao.TieziMapper;
 import Nillouise.dao.UserMapper;
+import Nillouise.model.Document;
+import Nillouise.model.Floor;
 import Nillouise.model.Tiezi;
 import Nillouise.model.User;
 import org.apache.ibatis.io.Resources;
@@ -19,6 +23,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.web.servlet.i18n.FixedLocaleResolver;
+
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -181,9 +187,46 @@ public class Association
     }
 
     @Test
-    public void testMapper()
+    public void testMapper() throws IOException
     {
-        assert (5-1==1);
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory =
+                new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession session = sqlSessionFactory.openSession();
+
+
+        DocumentMapper documentMapper = session.getMapper(DocumentMapper.class);
+        FloorMapper floorMapper = session.getMapper(FloorMapper.class);
+        TieziMapper tieziMapper = session.getMapper(TieziMapper.class);
+        UserMapper userDao = session.getMapper(UserMapper.class);
+
+        User user = new User();
+        user.setUsername("test144");
+        user.setPassword("test144");
+        int cnt = userDao.addUser(user);
+        System.out.println("user id:"+user.getId());
+        user.setPassword("changepassword");
+        userDao.updateUser(user);
+        List<User> users = userDao.getAllUsers();
+
+        Tiezi tiezi = new Tiezi();
+        tiezi.setContent("tiezi content junit");
+        tiezi.setTitle("tiezi title junit");
+        tiezi.setUserid(user.getId());
+        tieziMapper.addtiezi(tiezi);
+
+        Floor floor = new Floor();
+        floor.setUserid(user.getId());
+        floor.setContent("floor content junit");
+        floor.setTieziid(tiezi.getId());
+        floorMapper.addFloor(floor);
+
+        List<Floor> floors = floorMapper.getFloors(tiezi.getId());
+
+
+        session.commit();
+        session.close();
     }
 
 }

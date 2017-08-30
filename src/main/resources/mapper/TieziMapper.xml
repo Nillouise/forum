@@ -24,7 +24,7 @@
         select * from tiezi_inf WHERE id = #{id}
     </select>
 
-    <insert id="addtiezi" parameterType="Nillouise.model.Tiezi">
+    <insert id="addtiezi" parameterType="Nillouise.model.Tiezi" keyProperty="id" useGeneratedKeys="true">
         insert tiezi_inf set userid=#{userid},title=#{title},content=#{content}
     </insert>
 
