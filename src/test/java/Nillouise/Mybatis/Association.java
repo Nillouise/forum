@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 
 public class Association
@@ -81,19 +82,56 @@ public class Association
         SqlSession session = sqlSessionFactory.openSession();
 
         UserMapper userDao = session.getMapper(UserMapper.class);
-
-        User user1 = userDao.selectUser(1);
+//
+//        User user1 = userDao.selectUser(1);
 
         User user = userDao.findUser("test1","test1");
 
-        Thread.sleep(3000);
 
 //        tiezi.getFloors();
 //        System.out.println(tiezi);
         session.close();
     }
 
+    @Test
+    public void getAlluser() throws Exception
+    {
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory =
+                new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession session = sqlSessionFactory.openSession();
+
+        UserMapper userDao = session.getMapper(UserMapper.class);
+//
+//        User user1 = userDao.selectUser(1);
+
+        List<User> user = userDao.getAllUsers();
 
 
+//        tiezi.getFloors();
+//        System.out.println(tiezi);
+        session.close();
+    }
+
+    @Test
+    public void adduser() throws IOException
+    {
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory =
+                new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession session = sqlSessionFactory.openSession();
+
+        UserMapper userDao = session.getMapper(UserMapper.class);
+
+        User user = new User();
+        user.setUsername("test112");
+        user.setPassword("test112");
+        int cnt = userDao.addUser(user);
+        session.commit();
+        session.close();
+
+    }
 
 }

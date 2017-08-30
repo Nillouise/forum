@@ -37,6 +37,7 @@
         <!--<mapper class="Nillouise.dao.UserMapper"/>-->
         <mapper resource="mapper/TieziMapper.xml"/>
         <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/DocumentMapper.xml"/>
         <!--<mapper resource="mapper"/>-->
         <!--<mapper class="Nillouise.dao.TieziMapper"/>-->
         <!--<package name="Nillouise.dao"/>-->

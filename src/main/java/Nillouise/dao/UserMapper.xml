@@ -8,6 +8,7 @@
         <result property="username" column="username"/>
         <result property="password" column="password"/>
         <result property="avatarid" column="avatarid"/>
+        <!--调用其他mapper.xml文件里的语句，只要把全名写上就行了（当然也要在mybatis配置里导入那个xml文件-->
         <association property="avatar" column="avatarid"
                      fetchType="lazy" select="Nillouise.dao.DocumentMapper.selectDocument"/>
     </resultMap>
@@ -19,4 +20,18 @@
     <select id="findUser" resultMap="Nillouise.dao.UserMapper.userRM">
         select * from user_inf where username = #{username} and password = #{password}
     </select>
+
+    <select id="getAllUsers" resultMap="Nillouise.dao.UserMapper.userRM">
+        select * from user_inf
+    </select>
+
+    <update id="updateUser" parameterType="Nillouise.model.User">
+        update user_inf set username = #{username}, password = #{password},avatarid = #{avatarid} where id=#{id}
+    </update>
+
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id" parameterType="Nillouise.model.User">
+        insert user_inf set username=#{username},password=#{password},avatarid=#{avatarid}
+    </insert>
+
+
 </mapper>

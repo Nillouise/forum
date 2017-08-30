@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Nillouise.dao.FloorMapper">
+    <select id="getFloors" resultType="Nillouise.model.Floor" parameterType="int">
+        select * from floor_inf where tieziid = #{id}
+    </select>
+
+    <insert id="addFloor" parameterType="Nillouise.model.Floor">
+        insert floor_inf set userid=#{userid},tieziid=#{tieziid},content=#{content}
+    </insert>
+
+</mapper>

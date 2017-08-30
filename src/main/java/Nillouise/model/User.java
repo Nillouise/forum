@@ -20,7 +20,7 @@ public class User
     @Length(min = 4,max = 10,message = "password length error")
     private String password="";
 
-    private int avatarid;
+    private int avatarid=1;
     private Document avatar;
 
     public boolean copyFrom(User source)
