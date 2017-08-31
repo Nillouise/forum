@@ -6,4 +6,10 @@
     <select id="selectDocument" resultType="Nillouise.model.Document">
         select * from document_inf where id = #{id}
     </select>
+    <insert id="addDocument" parameterType="Nillouise.model.Document" useGeneratedKeys="true" keyProperty="id">
+        insert document_inf set path=#{path},originname=#{originname},savename=#{savename},uses=#{uses},userid=#{userid}
+    </insert>
+
+
+
 </mapper>

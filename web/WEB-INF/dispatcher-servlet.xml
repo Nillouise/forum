@@ -47,4 +47,26 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
+
+    <!-- handnote -->
+    <!-- 注意这里的value都是用双引号引起来的，也有种不引起来的写法，那是代表一个变量名字（这个变量名字也是在这个xml文件里设置导入的） -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/forum?characterEncoding=UTF-8&amp;serverTimezone=UTC" />
+        <property name="username" value="root" />
+        <property name="password" value="admin" />
+    </bean>
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+    </bean>
+    <!-- 注意这里mybatis扫描了两种东西，一个是xml文件（保存sql语句的mybatis xml文件），一个是用来生成mybatis实体查询类的接口（interface） -->
+    <!--<context:component-scan base-package="Nillouise.service"/>-->
+    <!-- 自动扫描了所有的XxxxMapper.xml对应的mapper接口文件，这样就不用一个一个手动配置Mpper的映射了，只要Mapper接口类和Mapper映射文件对应起来就可以了。 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage"
+                  value="Nillouise.dao" />
+    </bean>
+
+
 </beans>
