@@ -31,17 +31,17 @@
             </dataSource>
         </environment>
     </environments>
-    <mappers>
-        <!--<mapper resource="UserMapper.xml"/>-->
-        <!--<mapper class="Nillouise.dao.UserMapper"/>-->
-        <mapper resource="mapper/TieziMapper.xml"/>
-        <mapper resource="mapper/UserMapper.xml"/>
-        <mapper resource="mapper/DocumentMapper.xml"/>
-        <mapper resource="mapper/FloorMapper.xml"/>
-        <!--<mapper resource="mapper"/>-->
-        <!--<mapper class="Nillouise.dao.TieziMapper"/>-->
-        <!--<package name="Nillouise.dao"/>-->
-        <!--<mapper class="Nillouise.mapper.UserInfoMapper"/>-->
-        <!--<mapper url="file:///main/java/Nillouise/mapper/UserInfo.xml"></mapper>-->
-    </mappers>
+    <!--<mappers>-->
+        <!--&lt;!&ndash;<mapper resource="UserMapper.xml"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper class="Nillouise.dao.UserMapper"/>&ndash;&gt;-->
+        <!--<mapper resource="mapper/TieziMapper.xml"/>-->
+        <!--<mapper resource="mapper/UserMapper.xml"/>-->
+        <!--<mapper resource="mapper/DocumentMapper.xml"/>-->
+        <!--<mapper resource="mapper/FloorMapper.xml"/>-->
+        <!--&lt;!&ndash;<mapper resource="mapper"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper class="Nillouise.dao.TieziMapper"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<package name="Nillouise.dao"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper class="Nillouise.mapper.UserInfoMapper"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper url="file:///main/java/Nillouise/mapper/UserInfo.xml"></mapper>&ndash;&gt;-->
+    <!--</mappers>-->
 </configuration>

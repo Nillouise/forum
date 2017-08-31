@@ -2,6 +2,7 @@ package Nillouise.controller;
 
 import Nillouise.model.User;
 import Nillouise.service.LoginService;
+import Nillouise.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,6 +33,9 @@ public class LoginController
 {
     @Autowired
     LoginService loginService;
+
+    @Autowired
+    UserService userService;
 
     //在这里注释modelattribute，返回的并不是视图的名称（也不能转向）
     //似乎在这里进行权限检查并转向，其实不合适。
@@ -73,8 +77,8 @@ public class LoginController
             return "WEB-INF/login.jsp";
         }
 
-
-        if(!loginService.check(user))
+        user = userService.checkUser(user.getUsername(),user.getPassword());
+        if(user==null)
         {
             errors.rejectValue("username","userinconsistent","user inconsistent");
         }

@@ -99,6 +99,18 @@
 
     </dependencies>
 
-
+    <!-- mybatis的xml文件放在java文件夹下，在idea是有bug的（好像因为idea不会把java文件夹下的xml文件当成是资源 -->
+    <!-- 而mybatis需要这么做，所以下面的build就要改设置，不然mybatis根本找不到xml文件 -->
+    <!--http://blog.csdn.net/shifangwannian/article/details/48882201-->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 
 </project>

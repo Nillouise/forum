@@ -12,6 +12,7 @@ import java.util.List;
 @Service
 public class RegistService
 {
+
     public static List<User> userList = new ArrayList<User>();
 
     Logger LOGGER = LoggerFactory.getLogger(RegistService.class);

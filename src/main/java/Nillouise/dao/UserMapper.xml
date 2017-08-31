@@ -30,7 +30,7 @@
     </update>
 
     <insert id="addUser" useGeneratedKeys="true" keyProperty="id" parameterType="Nillouise.model.User">
-        insert user_inf set username=#{username},password=#{password},avatarid=#{avatarid}
+        insert ignore into user_inf set username=#{username},password=#{password},avatarid=#{avatarid}
     </insert>
 
 
