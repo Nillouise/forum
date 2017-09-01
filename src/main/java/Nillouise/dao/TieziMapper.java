@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface TieziMapper
 {
-    Tiezi selecttiezi(int id);
+    Tiezi selecttiezi(int tieziid);
 
     int addtiezi(Tiezi tiezi);
 

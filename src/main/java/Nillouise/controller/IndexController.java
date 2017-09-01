@@ -2,6 +2,7 @@ package Nillouise.controller;
 
 import Nillouise.model.Tiezi;
 import Nillouise.service.TieziService;
+import Nillouise.service.TieziServiceOld;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import static Nillouise.tool.RequestString.alltiezi;
 @Controller
 public class IndexController
 {
+
     @Autowired
     TieziService tieziService;
 

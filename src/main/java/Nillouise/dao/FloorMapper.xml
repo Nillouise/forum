@@ -11,4 +11,12 @@
         insert floor_inf set userid=#{userid},tieziid=#{tieziid},content=#{content}
     </insert>
 
+    <update id="updateFloor" parameterType="Nillouise.model.Floor">
+        update floor_inf set userid=#{userid},tieziid=#{tieziid},content=#{content},zan=#{zan},cai=#{cai} where id=#{id}
+    </update>
+
+    <select id="selectFloor" resultMap="Nillouise.model.Floor" parameterType="int">
+        select * from floor_inf where id=#{id}
+    </select>
+
 </mapper>

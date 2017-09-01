@@ -12,6 +12,4 @@ public interface UserService
 {
     boolean addUser(User user);
     User checkUser(String username,String password);
-
-
 }

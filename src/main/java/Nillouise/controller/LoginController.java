@@ -1,7 +1,6 @@
 package Nillouise.controller;
 
 import Nillouise.model.User;
-import Nillouise.service.LoginService;
 import Nillouise.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,8 +30,6 @@ import static Nillouise.tool.RequestString.verificationcode;
 @Controller
 public class LoginController
 {
-    @Autowired
-    LoginService loginService;
 
     @Autowired
     UserService userService;

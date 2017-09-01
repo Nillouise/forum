@@ -11,4 +11,6 @@ public interface FloorMapper
 {
     List<Floor> getFloors(int tieziid);
     int addFloor(Floor floor);
+    int updateFloor(Floor floor);
+    Floor selectFloor(int floorid);
 }

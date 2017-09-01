@@ -2,6 +2,7 @@ package Nillouise.controller;
 
 import Nillouise.model.Floor;
 import Nillouise.service.TieziService;
+import Nillouise.service.TieziServiceOld;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,13 +26,16 @@ public class JsonController
 
 
     @Autowired
+    TieziServiceOld tieziServiceOld;
+
+    @Autowired
     TieziService tieziService;
 
     @RequestMapping(value = "/dianzan.do",method = RequestMethod.POST)
     public void dianzan(@RequestBody receivejson floorid, HttpServletResponse response) throws IOException
     {
 //        Integer floorid = json.floorid;
-        Floor floor = tieziService.getFloor(floorid.getFloorid());
+        Floor floor = tieziService.selectFloor(floorid.getFloorid());
         if(floor==null)
         {
             response.setContentType("text/html;charset=UTF-8");
@@ -39,7 +43,7 @@ public class JsonController
         }
 
         floor.setZan(floor.getZan()+1);
-
+        tieziService.updateFloor(floor);
         ObjectMapper mapper = new ObjectMapper();
 
         response.setContentType("text/html;charset=UTF-8");
@@ -52,13 +56,14 @@ public class JsonController
     {
 //      Integer floorid = json.floorid;
 
-        Floor floor = tieziService.getFloor(floorid.getFloorid());
+        Floor floor = tieziService.selectFloor(floorid.getFloorid());
         if(floor==null)
         {
             response.setContentType("text/html;charset=UTF-8");
             response.getWriter().println("0");
         }
         floor.setCai(floor.getCai()+1);
+        tieziService.updateFloor(floor);
         ObjectMapper mapper = new ObjectMapper();
 
         response.setContentType("text/html;charset=UTF-8");

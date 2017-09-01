@@ -1,7 +1,7 @@
 package Nillouise.controller;
 
 import Nillouise.model.User;
-import Nillouise.service.RegistService;
+import Nillouise.service.UserService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +20,7 @@ import javax.validation.Valid;
 public class RegisterController
 {
     @Autowired
-    RegistService registService;
+    UserService userService;
 
     @RequestMapping(value = "register")
     public String page(Model model)
@@ -35,7 +35,7 @@ public class RegisterController
     {
         System.out.println(user);
 
-        if(!registService.addUser(user))
+        if(!userService.addUser(user))
         {
             //第一个参数是field，也就是绑定到那个user的field中
             errors.rejectValue("username","username.duplicate","duplicate");
