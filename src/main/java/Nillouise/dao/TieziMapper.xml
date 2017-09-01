@@ -11,7 +11,7 @@
         <result property="userid" column="userid"/>
         <collection property="floors" javaType="ArrayList"
                     column="id" ofType="Nillouise.model.Tiezi"
-                    fetchType="lazy" select="Nillouise.dao.TieziMapper.selectfloor">
+                    fetchType="lazy" select="Nillouise.dao.FloorMapper.getFloors">
             <id property="id" column="id"/>
             <result property="content" column="content"/>
             <result property="userid" column="userid"/>
@@ -29,7 +29,7 @@
     </insert>
 
     <select id="getAlltiezi" resultMap="tieziRM">
-        select *from tiezi_inf
+        select * from tiezi_inf
     </select>
 
 </mapper>

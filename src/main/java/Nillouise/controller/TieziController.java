@@ -3,7 +3,7 @@ package Nillouise.controller;
 import Nillouise.model.Floor;
 import Nillouise.model.Tiezi;
 import Nillouise.model.User;
-import Nillouise.service.TieziServiceOld;
+import Nillouise.service.TieziService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +19,9 @@ import static Nillouise.tool.RequestString.userInfo;
 @Controller
 public class TieziController
 {
+
     @Autowired
-    TieziServiceOld tieziService;
+    TieziService tieziService;
 
     @ModelAttribute("floor")
     public Floor page()

@@ -2,7 +2,6 @@ package Nillouise.controller;
 
 import Nillouise.model.Floor;
 import Nillouise.service.TieziService;
-import Nillouise.service.TieziServiceOld;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,8 +24,6 @@ public class JsonController
     Logger LOGGER = LoggerFactory.getLogger(JsonController.class);
 
 
-    @Autowired
-    TieziServiceOld tieziServiceOld;
 
     @Autowired
     TieziService tieziService;
