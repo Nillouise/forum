@@ -24,5 +24,8 @@ public class UserServiceImpl implements UserService
         return userMapper.findUser(username,password);
     }
 
-
+    public boolean updateUser(User user)
+    {
+        return userMapper.updateUser(user)>0;
+    }
 }

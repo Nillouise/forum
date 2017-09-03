@@ -1,7 +1,12 @@
 package Nillouise.controller;
 
+import Nillouise.dao.DocumentMapper;
 import Nillouise.model.Document;
 import Nillouise.model.User;
+import Nillouise.service.DocumentService;
+import Nillouise.service.UserService;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.lang.annotation.Documented;
 import java.util.Date;
 
 import static Nillouise.tool.RequestString.userInfo;
@@ -20,6 +26,12 @@ import static Nillouise.tool.RequestString.userInfo;
 @Controller
 public class UploadController
 {
+    @Autowired
+    DocumentService documentService;
+    @Autowired
+    UserService userService;
+
+
     @RequestMapping("/avatar.do")
     public String avatar(HttpSession session,HttpServletRequest request, @RequestParam("file")MultipartFile file) throws IOException
     {
@@ -44,8 +56,12 @@ public class UploadController
         Document doc = new Document();
         doc.setSavename(newFilename);
         doc.setOriginname(filename);
+        doc.setUserid(user.getId());
         doc.setPath("/images/avatars/");
+        documentService.addDocument(doc);
         user.setAvatar(doc);
+        user.setAvatarid(doc.getId());
+        userService.updateUser(user);
 
         return "redirect:/userinfo";
     }
