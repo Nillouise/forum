@@ -4,7 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Nillouise.dao.FloorMapper">
 
-    <select id="getFloors" resultType="Nillouise.model.Floor" parameterType="int">
+    <resultMap id="floorRM" type="Nillouise.model.Floor">
+        <id property="id" column="id"/>
+        <result property="content" column="content"/>
+        <result property="userid" column="userid"/>
+        <result property="zan" column="zan"/>
+        <result property="cai" column="cai"/>
+        <association property="user" fetchType="lazy" column="userid" select="Nillouise.dao.UserMapper.selectUser"/>
+    </resultMap>
+
+    <select id="getFloors" resultMap="floorRM" parameterType="int">
         select * from floor_inf where tieziid = #{id}
     </select>
 
@@ -16,7 +25,7 @@
         update floor_inf set userid=#{userid},tieziid=#{tieziid},content=#{content},zan=#{zan},cai=#{cai} where id=#{id}
     </update>
 
-    <select id="selectFloor" resultType="Nillouise.model.Floor" parameterType="int">
+    <select id="selectFloor" resultMap="floorRM" parameterType="int">
         select * from floor_inf where id=#{id}
     </select>
 

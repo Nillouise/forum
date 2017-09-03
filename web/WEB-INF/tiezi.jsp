@@ -70,7 +70,12 @@
         </th>
         <c:forEach items="${tiezi.floors}"  var="i">
             <tr>
-                <td>${i.userid}</td>
+                <td>
+                    <div>
+                        <img src="..${i.user.avatar.path}${i.user.avatar.savename}"/>
+                        ${i.userid}
+                    </div>
+                </td>
                 <td>
                     <div style="width: 200px;height: 100px;">
                         ${i.content}
