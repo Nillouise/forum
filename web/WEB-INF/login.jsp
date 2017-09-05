@@ -15,20 +15,21 @@
 </head>
 <body>
 <%--好像一定要加name，才会post属性到服务器 --%>
-<form:form commandName="user" action="login.do" method="post" id="user">
-    username:
-    <form:input path="username" />
-    <form:errors path="username" cssStyle="color:red"/>
-    <br/>
-    password:
-    <input type="password" id="password" name="password">
-    <br/>
-    <img src="/verificationcode?exp=1" type="image" alt="">
-    <input type="text" id="captcha" name="captcha"/><br/>
-    <input type="submit" value="submit">
-    <br/>
-</form:form>
-
+<div style="text-align: center">
+    <form:form commandName="user" action="login.do" method="post" id="user">
+        username:
+        <form:input path="username" />
+        <form:errors path="username" cssStyle="color:red"/>
+        <br/>
+        password:
+        <input type="password" id="password" name="password">
+        <br/>
+        <img src="/verificationcode?exp=1" type="image" alt="">
+        <input type="text" id="captcha" name="captcha"/><br/>
+        <input type="submit" value="submit">
+        <br/>
+    </form:form>
+</div>
 
 </body>
 </html>

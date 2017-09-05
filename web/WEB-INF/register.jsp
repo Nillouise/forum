@@ -13,18 +13,20 @@
     <title>Register</title>
 </head>
 <body>
-<form:form commandName="user" action="register.do" method="post" id="user">
-    username:
-    <form:input path="username" />
-    <form:errors path="username" cssStyle="color:red"/>
-    <br/>
-    password:
-    <input type="password" id="password" name="password">
-    <br/>
-    <input type="submit" value="submit">
-    <br/>
-</form:form>
-<spring:message code="usernamelength"></spring:message>
+<div style="text-align: center">
+    <form:form commandName="user" action="register.do" method="post" id="user">
+        username:
+        <form:input path="username" />
+        <form:errors path="username" cssStyle="color:red"/>
+        <br/>
+        password:
+        <input type="password" id="password" name="password">
+        <br/>
+        <input type="submit" value="submit">
+        <br/>
+    </form:form>
+    <spring:message code="usernamelength"></spring:message>
+</div>
 <%-- erros 标签好像一定要把这个form都用spring的form渲染才能正确显示错误 --%>
 <%--<form action="register.do" method="post" name="user" id="user">--%>
     <%--username:--%>

@@ -64,23 +64,33 @@
 <a href="/">首页</a>
     <h3>${tiezi.title}</h3>
     <table>
-        <th>
-            <td>${tiezi.userid}</td>
-            <td>${tiezi.content}</td>
-        </th>
+        <tr>
+            <td>
+                <div style="border: 1px #0000ff;" >
+                    <span>
+                        <img src="..${tiezi.user.avatar.path}${tiezi.user.avatar.savename}" style="width: 80px;height: 80px;"/><br/>
+                        ${tiezi.user.username}
+                    </span>
+                    <span>
+                        ${tiezi.content}
+                    </span>
+                </div>
+            </td>
+        </tr>
         <c:forEach items="${tiezi.floors}"  var="i">
             <tr>
                 <td>
-                    <div>
-                        <img src="..${i.user.avatar.path}${i.user.avatar.savename}"/>
-                        ${i.userid}
-                    </div>
-                </td>
-                <td>
-                    <div style="width: 200px;height: 100px;">
-                        ${i.content}
-                        <input type="button" id="zan${i.id}" value="赞" onclick="dianzan(this)">
-                        <input type="button" id="cai${i.id}" value="踩" onclick="diancai(this)">
+                    <div >
+                        <span>
+                            <img src="..${i.user.avatar.path}${i.user.avatar.savename}" style="width: 80px;height: 80px;"/>
+                            <br/>
+                                ${i.user.username}
+                        </span>
+                        <span>
+                                ${i.content}
+                            <input type="button" id="zan${i.id}" value="赞" onclick="dianzan(this)">
+                            <input type="button" id="cai${i.id}" value="踩" onclick="diancai(this)">
+                        </span>
                     </div>
                 </td>
             </tr>

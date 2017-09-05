@@ -9,6 +9,8 @@
         <result property="title" column="title"/>
         <result property="content" column="content"/>
         <result property="userid" column="userid"/>
+        <association property="user" column="userid" fetchType="lazy" select="Nillouise.dao.UserMapper.selectUser">
+        </association>
         <collection property="floors" javaType="ArrayList"
                     column="id" ofType="Nillouise.model.Tiezi"
                     fetchType="lazy" select="Nillouise.dao.FloorMapper.getFloors">
