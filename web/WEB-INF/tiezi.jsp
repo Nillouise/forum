@@ -63,40 +63,88 @@
 <body>
 <a href="/">首页</a>
     <h3>${tiezi.title}</h3>
-    <table>
-        <tr>
-            <td>
-                <div style="border: 1px #0000ff;" >
-                    <span>
-                        <img src="..${tiezi.user.avatar.path}${tiezi.user.avatar.savename}" style="width: 80px;height: 80px;"/><br/>
-                        ${tiezi.user.username}
-                    </span>
-                    <span>
-                        ${tiezi.content}
-                    </span>
-                </div>
-            </td>
-        </tr>
-        <c:forEach items="${tiezi.floors}"  var="i">
-            <tr>
-                <td>
-                    <div >
-                        <span>
-                            <img src="..${i.user.avatar.path}${i.user.avatar.savename}" style="width: 80px;height: 80px;"/>
-                            <br/>
-                                ${i.user.username}
-                        </span>
-                        <span>
-                                ${i.content}
-                            <input type="button" id="zan${i.id}" value="赞" onclick="dianzan(this)">
-                            <input type="button" id="cai${i.id}" value="踩" onclick="diancai(this)">
-                        </span>
-                    </div>
-                </td>
-            </tr>
-        </c:forEach>
-
-    </table>
+    <%--<table>--%>
+        <%--<tr>--%>
+            <%--<td>--%>
+                <%--<div style="border: 1px #0000ff;" >--%>
+                    <%--<span>--%>
+                        <%--<img src="..${tiezi.user.avatar.path}${tiezi.user.avatar.savename}" style="width: 80px;height: 80px;"/><br/>--%>
+                        <%--${tiezi.user.username}--%>
+                    <%--</span>--%>
+                    <%--<span>--%>
+                        <%--${tiezi.content}--%>
+                    <%--</span>--%>
+                <%--</div>--%>
+            <%--</td>--%>
+        <%--</tr>--%>
+        <%--<c:forEach items="${tiezi.floors}"  var="i">--%>
+            <%--<tr>--%>
+                <%--<td>--%>
+                    <%--<div >--%>
+                        <%--<span>--%>
+                            <%--<img src="..${i.user.avatar.path}${i.user.avatar.savename}" style="width: 80px;height: 80px;"/>--%>
+                            <%--<br/>--%>
+                                <%--${i.user.username}--%>
+                        <%--</span>--%>
+                        <%--<span>--%>
+                                <%--${i.content}--%>
+                            <%--<input type="button" id="zan${i.id}" value="赞" onclick="dianzan(this)">--%>
+                            <%--<input type="button" id="cai${i.id}" value="踩" onclick="diancai(this)">--%>
+                        <%--</span>--%>
+                    <%--</div>--%>
+                <%--</td>--%>
+            <%--</tr>--%>
+        <%--</c:forEach>--%>
+    <%--</table>--%>
+<div style="width: 740px;clear: both;
+                margin: 0;
+                padding: 0;">
+    <div
+            style="border:0;
+            border-left: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E1E4E6;
+            box-sizing: content-box;
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 739px;
+            box-sizing: content-box;">
+        <div style="float: left;width: 130px;">
+            <ul>
+                <li><img src="..${tiezi.user.avatar.path}${tiezi.user.avatar.savename}" style="width: 80px;height: 80px;"/></li>
+                <li>${tiezi.user.username}</li>
+            </ul>
+        </div>
+        <div style="float: left;position: relative;width: 588px;">
+            ${tiezi.content}
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <c:forEach items="${tiezi.floors}"  var="i">
+        <div
+                style="border:0;
+                border-left: 1px solid #E5E5E5;
+                border-bottom: 1px solid #E1E4E6;
+                box-sizing: content-box;
+                display: block;
+                margin: 0;
+                padding: 0;
+                width: 739px;
+                box-sizing: content-box;">
+            <div style="float: left;text-align: center;width: 130px;">
+                <ul>
+                    <li><img src="..${i.user.avatar.path}${i.user.avatar.savename}" style="width: 80px;height: 80px;"/></li>
+                    <li>${i.user.username}</li>
+                </ul>
+            </div>
+            <div style="float: left;position: relative;width: 588px;">
+                    ${i.content}
+            </div>
+            <div style="clear: both;"></div>
+            <%--加了上面这句，才能让div在用了float的情况下，父div能被子div撑开--%>
+        </div>
+    </c:forEach>
+</div>
     <form:form commandName="floor" action="addfloor.do" method="post" id="floor">
         <input type="hidden" name="tieziid" value="${tiezi.id}"/>
         <form:textarea path="content"/><br/>
