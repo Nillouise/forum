@@ -8,6 +8,7 @@ import Nillouise.model.Document;
 import Nillouise.model.Floor;
 import Nillouise.model.Tiezi;
 import Nillouise.model.User;
+import Nillouise.service.TieziService;
 import org.apache.ibatis.io.Resources;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -35,7 +36,6 @@ import java.util.List;
 
 public class Association
 {
-    @Before
     public void runsql() throws ClassNotFoundException, SQLException
     {
 
@@ -229,4 +229,18 @@ public class Association
         session.close();
     }
 
+    @Test
+    public void searchKeyword() throws Exception
+    {
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory =
+                new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession session = sqlSessionFactory.openSession();
+
+
+        TieziMapper tieziMapper = session.getMapper(TieziMapper.class);
+        List<Tiezi> fdf = tieziMapper.searchtiezi("fdf");
+
+    }
 }

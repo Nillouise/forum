@@ -1,6 +1,7 @@
 package Nillouise.dao;
 
 import Nillouise.model.Tiezi;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface TieziMapper
 
     List<Tiezi> getAlltiezi();
 
+    List<Tiezi> searchtiezi(@Param("keyword")String keyword);
 }

@@ -23,7 +23,7 @@
           <c:forEach items="${alltiezi}" var="t">
               <tr>
                   <td><a href="/selecttiezi?tieziid=${t.id}">${t.title}</a></td>
-                  <td>${t.userid}</td>
+                  <td>${t.user.username}</td>
               </tr>
           </c:forEach>
       </table>

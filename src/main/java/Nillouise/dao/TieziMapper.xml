@@ -21,7 +21,6 @@
         </collection>
     </resultMap>
 
-
     <select id="selecttiezi" resultMap="tieziRM">
         select * from tiezi_inf WHERE id = #{id}
     </select>
@@ -32,6 +31,10 @@
 
     <select id="getAlltiezi" resultMap="tieziRM">
         select * from tiezi_inf
+    </select>
+
+    <select id="searchtiezi" resultMap="tieziRM">
+        select * from tiezi_inf where title like "%"#{keyword}"%" or content like "%"#{keyword}"%"
     </select>
 
 </mapper>
