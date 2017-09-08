@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.i18n.FixedLocaleResolver;
 
 import javax.servlet.http.HttpSession;
 
@@ -30,14 +31,19 @@ public class TieziController
     }
 
     @RequestMapping("/addthread.do")
-    public String addthreadDo(Tiezi tiezi, HttpSession session)
+    public String addthreadDo( HttpSession session,String title,String content)
     {
         User user = (User)session.getAttribute(userInfo);
         if(user==null)
         {
             return "redirect:/login";
         }
+        Tiezi tiezi =new Tiezi();
+        tiezi.setTitle(title);
         tieziService.addThread(user, tiezi);
+        Floor floor = new Floor();
+        floor.setContent(content);
+        tieziService.addFloor(user,tiezi.getId(),floor);
 
         return "redirect:/index";
     }

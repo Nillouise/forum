@@ -7,7 +7,6 @@
     <resultMap id="tieziRM" type="Nillouise.model.Tiezi">
         <id property="id" column="id"/>
         <result property="title" column="title"/>
-        <result property="content" column="content"/>
         <result property="userid" column="userid"/>
         <association property="user" column="userid" fetchType="lazy" select="Nillouise.dao.UserMapper.selectUser">
         </association>
@@ -26,7 +25,7 @@
     </select>
 
     <insert id="addtiezi" parameterType="Nillouise.model.Tiezi" keyProperty="id" useGeneratedKeys="true">
-        insert tiezi_inf set userid=#{userid},title=#{title},content=#{content}
+        insert tiezi_inf set userid=#{userid},title=#{title}
     </insert>
 
     <select id="getAlltiezi" resultMap="tieziRM">
@@ -34,7 +33,7 @@
     </select>
 
     <select id="searchtiezi" resultMap="tieziRM">
-        select * from tiezi_inf where title like #{keyword} or content like #{keyword}
+        select * from tiezi_inf where title like #{keyword}
     </select>
 
     <select id="searchByUsername" resultMap="tieziRM">

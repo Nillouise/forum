@@ -1,6 +1,7 @@
 package Nillouise.dao;
 
 import Nillouise.model.Floor;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +14,7 @@ public interface FloorMapper
     int addFloor(Floor floor);
     int updateFloor(Floor floor);
     Floor selectFloor(int floorid);
+
+    List<Floor> searchfloor(@Param("keyword")String keyword);
+    List<Floor> searchByUsername(@Param("username")String username);
 }

@@ -100,27 +100,6 @@
     <div style="width: 740px;clear: both;
                     margin: 0;
                     padding: 0;">
-        <div
-                style="border:0;
-                border-left: 1px solid #E5E5E5;
-                border-bottom: 1px solid #E1E4E6;
-                box-sizing: content-box;
-                display: block;
-                margin: 0;
-                padding: 0;
-                width: 739px;
-                box-sizing: content-box;">
-            <div style="float: left;width: 130px;">
-                <ul style="list-style: none;">
-                    <li><img src="..${tiezi.user.avatar.path}${tiezi.user.avatar.savename}" style="width: 80px;height: 80px;"/></li>
-                    <li>${tiezi.user.username}</li>
-                </ul>
-            </div>
-            <div style="float: left;position: relative;width: 588px;">
-                ${tiezi.content}
-            </div>
-            <div style="clear: both;"></div>
-        </div>
         <c:forEach items="${tiezi.floors}"  var="i">
             <div
                     style="border:0;

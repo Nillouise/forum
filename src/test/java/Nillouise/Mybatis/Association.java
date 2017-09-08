@@ -211,7 +211,6 @@ public class Association
         List<User> users = userDao.getAllUsers();
 
         Tiezi tiezi = new Tiezi();
-        tiezi.setContent("tiezi content junit");
         tiezi.setTitle("tiezi title junit");
         tiezi.setUserid(user.getId());
         tieziMapper.addtiezi(tiezi);

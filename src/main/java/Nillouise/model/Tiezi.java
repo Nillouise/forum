@@ -8,7 +8,6 @@ public class Tiezi
 {
     private int id;
     private String title="";
-    private String content="";
     private int userid=-1;
     private List<Floor> floors=new ArrayList<Floor>();
     private User user;
@@ -45,15 +44,6 @@ public class Tiezi
         this.title = title;
     }
 
-    public String getContent()
-    {
-        return content;
-    }
-
-    public void setContent(String content)
-    {
-        this.content = content;
-    }
 
     public int getUserid()
     {

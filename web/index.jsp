@@ -32,12 +32,13 @@
     <br/>
     <br/>
     <div style="max-width: 300px;margin: 0 auto;">
-        <form:form commandName="tiezi" action="addthread.do" method="post" id="tiezi" cssStyle="float:right;">
-            <form:input path="title" cssStyle="width: 300px"/><br/>
-            <form:textarea path="content" cssStyle="margin-top: 5px;width: 300px;"/><br/>
+        <form action="addthread.do" method="post" id="tiezi" cssStyle="float:right;">
+            <input name="title" style="width: 300px"/><br/>
+            <textarea name="content" style="margin-top: 5px;width: 300px;"></textarea>
+            <br/>
             <input type="submit" style="float:right"/>
 
-        </form:form>
+        </form>
     </div>
 </div>
   </body>
