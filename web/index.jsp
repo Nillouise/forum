@@ -17,6 +17,7 @@
   <a href="/register">注册</a>
   <a href="/login">登录</a>
   <a href="/logout">注销</a>
+  <jsp:include page="WEB-INF/gadget/searchTool.jsp"/>
 <div style="max-width: 600px;margin: 0 auto;">
       <table style="margin: 0px auto;">
           <tr><th>Title</th><th>userid</th></tr>

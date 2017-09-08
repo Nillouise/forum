@@ -6,4 +6,5 @@ public interface RequestString
     String userInfo = "userinfo";
     String alltiezi = "alltiezi";
     String verificationcode = "verificationcode";
+    String searchresult="searchresult";
 }

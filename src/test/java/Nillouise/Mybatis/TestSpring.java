@@ -29,7 +29,10 @@ public class TestSpring
     @Test
     public void name() throws Exception
     {
-        List<Tiezi> fdf = searchService.searchByKeyword("fdf");
+        List<Tiezi> fdf = searchService.searchByKeyword("title");
         System.out.println(fdf);
+
+        List<Tiezi> dd = searchService.searchByUsername("test1");
+        System.out.println(dd);
     }
 }

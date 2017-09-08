@@ -34,7 +34,10 @@
     </select>
 
     <select id="searchtiezi" resultMap="tieziRM">
-        select * from tiezi_inf where title like "%"#{keyword}"%" or content like "%"#{keyword}"%"
+        select * from tiezi_inf where title like #{keyword} or content like #{keyword}
     </select>
 
+    <select id="searchByUsername" resultMap="tieziRM">
+        select * from tiezi_inf where userid=(select id from user_inf where username=#{username})
+    </select>
 </mapper>

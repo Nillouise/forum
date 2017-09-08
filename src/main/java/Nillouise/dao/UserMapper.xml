@@ -33,5 +33,4 @@
         insert ignore into user_inf set username=#{username},password=#{password},avatarid=#{avatarid}
     </insert>
 
-
 </mapper>

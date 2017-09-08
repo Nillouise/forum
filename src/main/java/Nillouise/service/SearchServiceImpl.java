@@ -18,11 +18,13 @@ public class SearchServiceImpl implements SearchService
 
     public List<Tiezi> searchByKeyword(String keyword)
     {
-        return tieziMapper.searchtiezi(keyword);
+        String escapeString = "%"+keyword+"%";
+
+        return tieziMapper.searchtiezi(escapeString);
     }
 
     public List<Tiezi> searchByUsername(String username)
     {
-        return null;
+        return tieziMapper.searchByUsername(username);
     }
 }

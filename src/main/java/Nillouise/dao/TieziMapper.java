@@ -17,4 +17,6 @@ public interface TieziMapper
     List<Tiezi> getAlltiezi();
 
     List<Tiezi> searchtiezi(@Param("keyword")String keyword);
+
+    List<Tiezi> searchByUsername(@Param("username")String username);
 }
