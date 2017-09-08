@@ -7,14 +7,37 @@ public class FloorDisplay
     private Floor floor;
     private Tiezi tiezi;
     private String keyword;
-    private String username;
-    public FloorDisplay(Floor floor, Tiezi tiezi, String keyword, String username)
+
+    public FloorDisplay(Tiezi tiezi,Floor floor, String keyword)
     {
         this.floor = floor;
         this.tiezi = tiezi;
         this.keyword = keyword;
-        this.username = username;
+
+
+        if(this.floor == null)
+        {
+            try
+            {
+                this.floor = tiezi.getFloors().get(0);
+            }catch (Exception e)
+            {
+                Floor emptyfloor = new Floor();
+                emptyfloor.setContent("");
+                emptyfloor.setUser(tiezi.getUser());
+                emptyfloor.setUserid(tiezi.getUserid());
+                emptyfloor.setTiezi(tiezi);
+                emptyfloor.setTieziid(tiezi.getId());
+                this.floor = emptyfloor;
+                e.printStackTrace();
+            }
+        }
+        if(this.tiezi==null)
+        {
+            this.tiezi = floor.getTiezi();
+        }
     }
+
 
     public Floor getFloor()
     {
@@ -46,13 +69,4 @@ public class FloorDisplay
         this.keyword = keyword;
     }
 
-    public String getUsername()
-    {
-        return username;
-    }
-
-    public void setUsername(String username)
-    {
-        this.username = username;
-    }
 }

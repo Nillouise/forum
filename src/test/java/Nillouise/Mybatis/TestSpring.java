@@ -1,5 +1,6 @@
 package Nillouise.Mybatis;
 
+import Nillouise.model.FloorDisplay;
 import Nillouise.model.Tiezi;
 import Nillouise.service.SearchService;
 import Nillouise.service.TieziService;
@@ -29,10 +30,10 @@ public class TestSpring
     @Test
     public void name() throws Exception
     {
-        List<Tiezi> fdf = searchService.searchByKeyword("title");
+        List<FloorDisplay> fdf = searchService.searchByKeyword("title");
         System.out.println(fdf);
 
-        List<Tiezi> dd = searchService.searchByUsername("test1");
+        List<FloorDisplay> dd = searchService.searchByUsername("test1");
         System.out.println(dd);
     }
 }

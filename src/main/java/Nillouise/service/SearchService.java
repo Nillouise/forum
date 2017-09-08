@@ -1,5 +1,6 @@
 package Nillouise.service;
 
+import Nillouise.model.FloorDisplay;
 import Nillouise.model.Tiezi;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 
 public interface SearchService
 {
-    List<Tiezi> searchByKeyword(String keyword);
-    List<Tiezi> searchByUsername(String username);
+    List<FloorDisplay> searchByKeyword(String keyword);
+    List<FloorDisplay> searchByUsername(String username);
 
 }
