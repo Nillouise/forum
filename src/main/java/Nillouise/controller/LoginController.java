@@ -70,7 +70,7 @@ public class LoginController
         if(corCode==null)
         {
             return "WEB-INF/login.jsp";
-        }else if(!corCode.equals(captcha)){
+        }else if(!corCode.toLowerCase().equals(captcha.toLowerCase())){
             return "WEB-INF/login.jsp";
         }
 

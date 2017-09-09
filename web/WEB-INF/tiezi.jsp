@@ -123,9 +123,9 @@
                 <div style="clear: both;"></div>
                 <%--加了上面这句，才能让div在用了float的情况下，父div能被子div撑开--%>
                 <div style="text-align:right;">
-                    <input type="button" id="zan${i.id}" value="赞" onclick="dianzan(this)" style="">
+                    <input type="button" id="zan${i.id}" value="赞${i.zan}" onclick="dianzan(this)" style="">
                     &nbsp;
-                    <input type="button" id="cai${i.id}" value="踩" onclick="diancai(this)" style="">
+                    <input type="button" id="cai${i.id}" value="踩${i.cai}" onclick="diancai(this)" style="">
                 </div>
             </div>
         </c:forEach>

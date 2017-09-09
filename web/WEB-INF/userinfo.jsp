@@ -15,7 +15,7 @@
 userid: ${userinfo.id}<br/>
 username:${userinfo.username}<br/>
 password:${userinfo.password}<br/>
-
+头像：<br/>
 <form action="/upload/avatar.do" enctype="multipart/form-data" method="post">
     请选择文件:
     <input type="file" name="file">
