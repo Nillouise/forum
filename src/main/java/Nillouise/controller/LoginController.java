@@ -64,7 +64,7 @@ public class LoginController
 
 
     @RequestMapping(value = "/login.do")
-    public String loginDo(@Valid User user, Errors errors, HttpSession session, @RequestParam String captcha)
+    public String loginDo(HttpSession session,@Valid User user, Errors errors, @RequestParam String captcha)
     {
         String corCode = (String) session.getAttribute(verificationcode);
         if(corCode==null)

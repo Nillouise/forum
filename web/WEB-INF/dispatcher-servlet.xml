@@ -3,13 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:component-scan base-package="Nillouise.controller"/>
     <context:component-scan base-package="Nillouise.service"/>
@@ -67,6 +70,19 @@
         <property name="basePackage"
                   value="Nillouise.dao" />
     </bean>
+
+    <!--aop要放在这里才行，因为controller这些bean是归这个xmlfile管的，另外这里需要xsi:schemaLocation加上某些东西 -->
+    <aop:aspectj-autoproxy />
+    <bean id="loginaop" class="Nillouise.aop.LoginAop"></bean>
+    <aop:config>
+        <aop:aspect ref="loginaop">
+            <!--注意这里..代表一段连续的参数，也就是是要有位置的考虑session必须写在第一位或最后一位才能正确捕获到 -->
+            <aop:pointcut id="login" expression="execution(* Nillouise.controller.LoginController.loginDo(..)) and args(session,..)"/>
+            <aop:after pointcut-ref="login" method="afterLogin"/>
+        </aop:aspect>
+    </aop:config>
+
+
 
 
 </beans>

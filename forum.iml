@@ -31,7 +31,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.3.10.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.10.RELEASE" level="project" />
@@ -62,5 +61,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:4.3.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.3.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.5.4" level="project" />
   </component>
 </module>

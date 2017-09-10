@@ -105,6 +105,20 @@
             <scope>test</scope>
         </dependency>
 
+        <!--aop好像必须要加下面这两个包-->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>4.3.10.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+
     </dependencies>
 
     <!-- mybatis的xml文件放在java文件夹下，在idea是有bug的（好像因为idea不会把java文件夹下的xml文件当成是资源 -->
