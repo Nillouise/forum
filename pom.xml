@@ -118,7 +118,12 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.5.4</version>
         </dependency>
-
+        <!--这个包好像使用annotation式的aop就要用到 -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.10</version>
+        </dependency>
     </dependencies>
 
     <!-- mybatis的xml文件放在java文件夹下，在idea是有bug的（好像因为idea不会把java文件夹下的xml文件当成是资源 -->
