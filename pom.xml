@@ -113,11 +113,19 @@
             <version>4.3.10.RELEASE</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/aspectj/aspectjweaver -->
+        <!--<dependency>-->
+            <!--<groupId>aspectj</groupId>-->
+            <!--<artifactId>aspectjweaver</artifactId>-->
+            <!--<version>1.5.4</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <!-- 上面这个过时包，是因为我google出来的第一个maven链接，搞得我aop出了问题 -->
         <dependency>
-            <groupId>aspectj</groupId>
+            <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.5.4</version>
+            <version>1.8.10</version>
         </dependency>
+
         <!--这个包好像使用annotation式的aop就要用到 -->
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -138,6 +146,20 @@
                 </includes>
             </resource>
         </resources>
+
+        <plugins>
+            <!--加了这一行，每次导入新maven包时就不会把java compiler改成5.0了 -->
+            <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+            </plugin>
+        </plugins>
+
     </build>
 
 </project>

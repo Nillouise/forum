@@ -27,7 +27,8 @@ public class RegisterController
     {
         model.addAttribute("user",new User());
 
-        return "WEB-INF/register.jsp";
+//        return "index.jsp";
+        return "/WEB-INF/register.jsp";
     }
 
     @RequestMapping(value = "register.do")
