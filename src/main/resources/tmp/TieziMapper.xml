@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Nillouise.dao.TieziMapper">
+
+    <resultMap id="tieziRM" type="Nillouise.model.Tiezi">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="userid" column="userid"/>
+        <collection property="floors" javaType="ArrayList"
+                    column="id" ofType="Nillouise.model.Tiezi"
+                    fetchType="lazy" select="Nillouise.dao.TieziMapper.selectfloor">
+            <id property="id" column="id"/>
+            <result property="content" column="content"/>
+            <result property="userid" column="userid"/>
+            <result property="tieziid" column="tieziid"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="selecttiezi" resultMap="tieziRM">
+        select * from tiezi_inf WHERE id = #{id}
+    </select>
+
+    <insert id="addtiezi" parameterType="Nillouise.model.Tiezi" keyProperty="id" useGeneratedKeys="true">
+        insert tiezi_inf set userid=#{userid},title=#{title},content=#{content}
+    </insert>
+
+    <select id="getAlltiezi" resultMap="tieziRM">
+        select *from tiezi_inf
+    </select>
+
+</mapper>
