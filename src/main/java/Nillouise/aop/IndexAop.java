@@ -16,7 +16,7 @@ public class IndexAop
 {
     @Pointcut("execution(* Nillouise.controller.IndexController.page(..))")
     public void signature(){}
-    @Pointcut("within(Nillouise.controller.*)")
+    @Pointcut("within(Nillouise.controller..*) && execution(public String *(..))")
     public void allcontroller(){}
 
     Logger LOGGER = LoggerFactory.getLogger(JsonController.class);
@@ -31,7 +31,7 @@ public class IndexAop
     }
 
 //    在controller这里用aop似乎会有问题，就是advicer不能正确返回string值给spring框架用来解决resolver问题
-    @Around("signature()")
+    @Around("allcontroller()")
     public String watchConsumeTime(ProceedingJoinPoint jp)
     {
         String r = "index.jsp";
@@ -40,7 +40,7 @@ public class IndexAop
             long startTime=System.currentTimeMillis();
             r = (String) jp.proceed();
             long endTime = System.currentTimeMillis();
-            LOGGER.info("controller %s consume %d ms",jp.getTarget(),endTime-startTime);
+            LOGGER.info("controller {} consume {} ms",jp.getTarget(),endTime-startTime);
         } catch (Throwable throwable)
         {
             throwable.printStackTrace();
