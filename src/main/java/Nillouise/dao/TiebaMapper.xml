@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Nillouise.dao.TiebaMapper">
+
+
+
+    <select id="selectTieba" resultMap="Nillouise.model.Tieba">
+        select * from tieba_inf WHERE tiebaname=#{tiebaname}
+    </select>
+
+    <insert id="createTieba" parameterType="Nillouise.model.Tieba" keyProperty="id" useGeneratedKeys="true">
+        insert tieba_inf set tiebaname=#{tiebaname}
+    </insert>
+
+</mapper>

@@ -1,6 +1,7 @@
 package Nillouise.service;
 
 import Nillouise.model.Floor;
+import Nillouise.model.Tieba;
 import Nillouise.model.Tiezi;
 import Nillouise.model.User;
 
@@ -16,5 +17,5 @@ public interface TieziService
     Floor selectFloor(int floorid);
     Tiezi getTiezi(int Tieziid);
     boolean updateFloor(Floor floor);
-
+//    List<Tiezi> getTieziByTieba(Tieba tieba);
 }
