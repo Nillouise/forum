@@ -3,10 +3,9 @@ package Nillouise.service;
 import Nillouise.dao.TiebaMapper;
 import Nillouise.model.Tieba;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-/**
- * Created by win7x64 on 2017/9/17.
- */
+@Service
 public class TiebaServiceImpl implements TiebaService
 {
     @Autowired

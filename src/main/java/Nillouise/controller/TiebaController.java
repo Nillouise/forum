@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @RequestMapping("/tieba")
@@ -21,12 +21,12 @@ public class TiebaController
     public String page(@PathVariable("tiebaname")String tiebaname, Model model)
     {
         Tieba tieba = tiebaService.getTieba(tiebaname);
+        model.addAttribute("tiebaname",tiebaname);
         if(tieba==null)
         {
-            model.addAttribute("tiebaname",tiebaname);
             return "/WEB-INF/notfoundtieba.jsp";
         }else{
-
+            //to do
             return "/WEB-INF/showtiezi.jsp";
         }
     }

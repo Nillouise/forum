@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-
+${tiebaname} 吧<br/>
+to do:显示贴吧的帖子
 </body>
 </html>

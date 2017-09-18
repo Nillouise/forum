@@ -6,7 +6,9 @@
 
 
 
-    <select id="selectTieba" resultMap="Nillouise.model.Tieba">
+    <!--这句resultMap 导致mybatis根本没启动起来，还害得我以为是其他地方出错（因为mybatis没启动起来，弄得其他地方也像是出错了） -->
+    <!--<select id="selectTieba" resultMap="Nillouise.model.Tieba">-->
+    <select id="selectTieba" resultType="Nillouise.model.Tieba">
         select * from tieba_inf WHERE tiebaname=#{tiebaname}
     </select>
 

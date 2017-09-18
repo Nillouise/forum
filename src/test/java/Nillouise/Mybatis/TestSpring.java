@@ -36,4 +36,12 @@ public class TestSpring
         List<FloorDisplay> dd = searchService.searchByUsername("test1");
         System.out.println(dd);
     }
+    @Autowired
+    TieziService tieziService;
+
+    @Test
+    public void testIncomplete() throws Exception
+    {
+        tieziService.getTieziAll();
+    }
 }

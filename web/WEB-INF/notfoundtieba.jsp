@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-希望创建一个吗？<br/>
+<span style="color: #FF0000;">${tiebaname}</span>吧 还没有成立，希望创建一个吗？<br/>
 <a href="/tieba/create.do?tiebaname=${tiebaname}">
     <input type="button" value="创建">
 </a>
