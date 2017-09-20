@@ -31,7 +31,7 @@ public class TieziController
     }
 
     @RequestMapping("/addthread.do")
-    public String addthreadDo( HttpSession session,String title,String content)
+    public String addthreadDo( HttpSession session,String title,String content,int tiebaid)
     {
         User user = (User)session.getAttribute(userInfo);
         if(user==null)
@@ -39,6 +39,7 @@ public class TieziController
             return "redirect:/login";
         }
         Tiezi tiezi =new Tiezi();
+        tiezi.setTiebaid(tiebaid);
         tiezi.setTitle(title);
         tieziService.addThread(user, tiezi);
         Floor floor = new Floor();

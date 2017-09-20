@@ -29,8 +29,10 @@ public class IndexController
     @RequestMapping({"index","/"})
     public String page(Model model)
     {
-        model.addAttribute(alltiezi, tieziService.getTieziAll());
-        return "index.jsp";
+        //废弃，改用tieba模式
+//        model.addAttribute(alltiezi, tieziService.getTieziAll());
+//        return "index.jsp";
+        return  "redirect:/tieba/lol";
     }
 
     public String test()
