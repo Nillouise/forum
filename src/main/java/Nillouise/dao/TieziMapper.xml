@@ -8,6 +8,7 @@
         <id property="id" column="id"/>
         <result property="title" column="title"/>
         <result property="userid" column="userid"/>
+        <result property="tiebaid" column="tiebaid"/>
         <association property="user" column="userid" fetchType="lazy" select="Nillouise.dao.UserMapper.selectUser">
         </association>
         <collection property="floors" javaType="ArrayList"
@@ -25,7 +26,7 @@
     </select>
 
     <insert id="addtiezi" parameterType="Nillouise.model.Tiezi" keyProperty="id" useGeneratedKeys="true">
-        insert tiezi_inf set userid=#{userid},title=#{title}
+        insert tiezi_inf set userid=#{userid},title=#{title},tiebaid=#{tiebaid}
     </insert>
 
     <select id="getAlltiezi" resultMap="tieziRM">

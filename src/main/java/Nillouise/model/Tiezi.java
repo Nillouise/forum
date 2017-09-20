@@ -11,6 +11,17 @@ public class Tiezi
     private int userid=-1;
     private List<Floor> floors=new ArrayList<Floor>();
     private User user;
+    private int tiebaid;
+
+    public int getTiebaid()
+    {
+        return tiebaid;
+    }
+
+    public void setTiebaid(int tiebaid)
+    {
+        this.tiebaid = tiebaid;
+    }
 
     public User getUser()
     {
