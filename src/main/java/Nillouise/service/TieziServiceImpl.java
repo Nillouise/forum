@@ -19,6 +19,13 @@ public class TieziServiceImpl implements TieziService
     @Autowired
     TieziMapper tieziMapper;
 
+    @Override
+    public List<Tiezi> getTieziByTieba(int tiebaid)
+    {
+
+        return tieziMapper.getTieziByTieba(tiebaid);
+    }
+
     public boolean addThread(User user, Tiezi tiezi)
     {
         tiezi.setUserid(user.getId());

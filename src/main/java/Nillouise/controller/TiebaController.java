@@ -30,7 +30,7 @@ public class TiebaController
         {
             return "/WEB-INF/notfoundtieba.jsp";
         }else{
-            model.addAttribute(alltiezi, tieziService.getTieziAll());
+            model.addAttribute(alltiezi, tieziService.getTieziByTieba(tieba.getId()));
             model.addAttribute("tiebaid",tieba.getId());
             return "/WEB-INF/showtiezi.jsp";
         }

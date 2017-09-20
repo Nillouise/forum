@@ -40,4 +40,9 @@
     <select id="searchByUsername" resultMap="tieziRM">
         select * from tiezi_inf where userid=(select id from user_inf where username=#{username})
     </select>
+
+    <select id="getTieziByTieba" resultMap="tieziRM">
+        select * from tiezi_inf where tiebaid = #{tiebaid}
+    </select>
+
 </mapper>

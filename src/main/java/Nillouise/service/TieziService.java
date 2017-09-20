@@ -17,5 +17,5 @@ public interface TieziService
     Floor selectFloor(int floorid);
     Tiezi getTiezi(int Tieziid);
     boolean updateFloor(Floor floor);
-//    List<Tiezi> getTieziByTieba(Tieba tieba);
+    List<Tiezi> getTieziByTieba(int tiebaid);
 }
