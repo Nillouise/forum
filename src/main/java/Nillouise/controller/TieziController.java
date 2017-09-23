@@ -4,9 +4,12 @@ import Nillouise.model.Floor;
 import Nillouise.model.Tiezi;
 import Nillouise.model.User;
 import Nillouise.service.TieziService;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,9 +33,42 @@ public class TieziController
         return new Floor();
     }
 
-    @RequestMapping("/addthread.do")
-    public String addthreadDo( HttpSession session,String title,String content,int tiebaid)
+    static class TieziForm
     {
+        @Length(min = 1,max = 50,message = "Tiezi title no empty")
+        String title;
+        @Length(min = 1,max = 5000,message = "Tiezi content no empty")
+        String content;
+
+        public String getTitle()
+        {
+            return title;
+        }
+
+        public void setTitle(String title)
+        {
+            this.title = title;
+        }
+
+        public String getContent()
+        {
+            return content;
+        }
+
+        public void setContent(String content)
+        {
+            this.content = content;
+        }
+    }
+
+    @RequestMapping("/addthread.do")
+    public String addthreadDo(HttpSession session, @Validated TieziForm form, Errors errors, int tiebaid)
+    {
+        if(errors.hasErrors())
+        {
+            return "redirect:/tieba?tiebaname="+session.getAttribute("curtieba");
+        }
+
         User user = (User)session.getAttribute(userInfo);
         if(user==null)
         {
@@ -40,13 +76,14 @@ public class TieziController
         }
         Tiezi tiezi =new Tiezi();
         tiezi.setTiebaid(tiebaid);
-        tiezi.setTitle(title);
+        tiezi.setTitle(form.getTitle());
         tieziService.addThread(user, tiezi);
         Floor floor = new Floor();
-        floor.setContent(content);
+        floor.setContent(form.getContent());
         tieziService.addFloor(user,tiezi.getId(),floor);
 
-        return "redirect:/index";
+
+        return "redirect:/tieba?tiebaname="+session.getAttribute("curtieba");
     }
 
     @RequestMapping("/selecttiezi")

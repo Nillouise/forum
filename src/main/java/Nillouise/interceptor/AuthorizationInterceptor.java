@@ -17,6 +17,13 @@ public class AuthorizationInterceptor implements HandlerInterceptor
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception
     {
+        //记录用户当前访问的贴吧
+        String tiebaName = request.getParameter("tiebaname");
+        if(tiebaName!=null)
+        {
+            request.getSession().setAttribute("curtieba",tiebaName);
+        }
+
         //已登录
         User user = (User)request.getSession().getAttribute(userInfo);
         if(user!=null)
@@ -42,6 +49,8 @@ public class AuthorizationInterceptor implements HandlerInterceptor
             request.getRequestDispatcher("error.jsp").forward(request,response);
             return false;
         }
+
+
         return true;
     }
 

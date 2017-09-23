@@ -52,7 +52,7 @@
     <br/>
     <br/>
     <div style="max-width: 300px;margin: 0 auto;">
-        <form action="/addthread.do" method="post" id="tiezi" cssStyle="float:right;">
+        <form action="/addthread.do" method="post" name="form" cssStyle="float:right;">
             <input type="hidden" name="tiebaid" value="${tiebaid}">
             <input name="title" style="width: 300px"/><br/>
             <textarea name="content" style="margin-top: 5px;width: 300px;"></textarea>
