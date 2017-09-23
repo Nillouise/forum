@@ -1,12 +1,16 @@
 package Nillouise.controller;
 
+import Nillouise.model.Tieba;
 import Nillouise.model.Tiezi;
+import Nillouise.service.TiebaService;
 import Nillouise.service.TieziService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 import static Nillouise.tool.RequestString.alltiezi;
 
@@ -20,6 +24,9 @@ public class IndexController
     @Autowired
     TieziService tieziService;
 
+    @Autowired
+    TiebaService tiebaService;
+
     @ModelAttribute("tiezi")
     public Tiezi setThread()
     {
@@ -32,7 +39,10 @@ public class IndexController
         //废弃，改用tieba模式
 //        model.addAttribute(alltiezi, tieziService.getTieziAll());
 //        return "index.jsp";
-        return  "redirect:/tieba/lol";
+
+        List<Tieba> allTieba = tiebaService.getAllTieba();
+        model.addAttribute("alltieba",allTieba);
+        return  "/index.jsp";
     }
 
     public String test()

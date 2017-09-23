@@ -5,6 +5,8 @@ import Nillouise.model.Tieba;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TiebaServiceImpl implements TiebaService
 {
@@ -22,5 +24,11 @@ public class TiebaServiceImpl implements TiebaService
     public boolean createTieba(String tiebaname)
     {
         return tiebaMapper.createTieba(tiebaname)>0;
+    }
+
+    @Override
+    public List<Tieba> getAllTieba()
+    {
+        return tiebaMapper.getALL();
     }
 }

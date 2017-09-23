@@ -21,4 +21,6 @@ public interface TieziMapper
     List<Tiezi> searchByUsername(@Param("username")String username);
 
     List<Tiezi> getTieziByTieba(@Param("tiebaid")int tiebaid);
+
+
 }

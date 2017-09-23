@@ -29,6 +29,15 @@
     </div>
     <div style="clear: both;"></div>
 </div>
+
+
+<div>
+    <form action="/tieba" method="get">
+        <input type="text" name="tiebaname" value="${tiebaname}">
+        <input type="submit" value="打开贴吧">
+    </form>
+</div>
+
 <div style="max-width: 600px;margin: 0 auto;">
     <table style="margin: 0px auto;">
         <tr><th>Title</th><th>userid</th></tr>

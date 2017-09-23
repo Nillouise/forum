@@ -12,6 +12,11 @@
         select * from tieba_inf WHERE tiebaname=#{tiebaname}
     </select>
 
+    <select id="getALL" resultType="Nillouise.model.Tieba">
+        select * from tieba_inf
+    </select>
+
+
     <insert id="createTieba" parameterType="Nillouise.model.Tieba" keyProperty="id" useGeneratedKeys="true">
         insert tieba_inf set tiebaname=#{tiebaname}
     </insert>

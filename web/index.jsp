@@ -29,30 +29,16 @@
       </div>
       <div style="clear: both;"></div>
   </div>
-  <div style="max-width: 600px;margin: 0 auto;">
-      <table style="margin: 0px auto;">
-          <tr><th>Title</th><th>userid</th></tr>
-          <c:forEach items="${alltiezi}" var="t">
-              <tr>
-                  <td><a href="/selecttiezi?tieziid=${t.id}">${t.title}</a></td>
-                  <td>${t.user.username}</td>
-              </tr>
+
+  <div>
+      现在有的贴吧：
+      <div>
+          <c:forEach var="i" items="${alltieba}">
+              <a href="/tieba?tiebaname=${i.tiebaname}">${i.tiebaname}</a><br/>
           </c:forEach>
-      </table>
+      </div>
+  </div>
 
-    <br/>
-    <br/>
-    <div style="max-width: 300px;margin: 0 auto;">
-        <form action="addthread.do" method="post" id="tiezi" cssStyle="float:right;">
-            <input type="hidden" name="tiebaid" value="${tiebaid}">
-            <input name="title" style="width: 300px"/><br/>
-            <textarea name="content" style="margin-top: 5px;width: 300px;"></textarea>
-            <br/>
-            <input type="submit" style="float:right"/>
-
-        </form>
-    </div>
-</div>
   <div style="position:fixed; left:0px; bottom:0px; width:100%; height:50px;  z-index:9999;">
       使用SSM+mysql开发的贴吧 项目github地址：<a href="https://github.com/Nillouise/forum">https://github.com/Nillouise/forum</a>
   </div>
