@@ -1,6 +1,7 @@
 package Nillouise.controller;
 
 
+import Nillouise.model.PageModel;
 import Nillouise.model.Tieba;
 import Nillouise.service.TiebaService;
 import Nillouise.service.TieziService;
@@ -47,6 +48,9 @@ public class TiebaController
         {
             return "/WEB-INF/notfoundtieba.jsp";
         }else{
+            int tieziCount = tieziService.getTieziCount(tieba.getId());
+
+
 //            model.addAttribute(alltiezi, tieziService.getTieziByTieba(tieba.getId()));
             model.addAttribute(alltiezi, tieziService.getTieziLimit(tieba.getId(),0,10));
             model.addAttribute("tiebaid",tieba.getId());

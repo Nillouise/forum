@@ -49,5 +49,8 @@
           select * from tiezi_inf where tiebaid = #{tiebaid} order by id DESC limit #{start},#{rows}
     </select>
 
+    <select id="getTieziNumbers" resultType="Integer">
+        select count(*) from tiezi_inf where tiebaid = #{tiebaid}
+    </select>
 
 </mapper>

@@ -69,4 +69,10 @@ public class TieziServiceImpl implements TieziService
     {
         return tieziMapper.getTieziLimit(tiebaid,start,rows);
     }
+
+    @Override
+    public int getTieziCount(int tiebaid)
+    {
+        return tieziMapper.getTieziNumbers(tiebaid);
+    }
 }
