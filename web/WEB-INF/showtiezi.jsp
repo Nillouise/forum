@@ -58,7 +58,6 @@
             <textarea name="content" style="margin-top: 5px;width: 300px;"></textarea>
             <br/>
             <input type="submit" style="float:right"/>
-
         </form>
     </div>
 </div>

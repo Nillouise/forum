@@ -47,6 +47,16 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+        <!--自定义jstl标签需要的包-->
+        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2.1-b03</version>
+            <scope>provided</scope>
+        </dependency>
+
+
         <!--这是把java对象转为json对象，把json对象转为java对象的库spring已经内置了 -->
         <!-- 这里要部署到服务器 -->
         <dependency>
