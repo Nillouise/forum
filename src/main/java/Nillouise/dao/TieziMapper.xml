@@ -46,7 +46,7 @@
     </select>
 
     <select id="getTieziLimit" resultMap="tieziRM">
-          select * from tiezi_inf where tiebaid = #{tiebaid}  limit #{start},#{rows} order by id ASC
+          select * from tiezi_inf where tiebaid = #{tiebaid} order by id DESC limit #{start},#{rows}
     </select>
 
 

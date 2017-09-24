@@ -39,7 +39,7 @@ public class TiebaController
     }
 
     @RequestMapping("")
-    public String pageWitParam(String tiebaname, Model model)
+    public String pageWitParam(String tiebaname,Integer page, Model model)
     {
         Tieba tieba = tiebaService.getTieba(tiebaname);
         model.addAttribute("tiebaname",tiebaname);
