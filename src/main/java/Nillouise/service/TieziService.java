@@ -18,4 +18,6 @@ public interface TieziService
     Tiezi getTiezi(int Tieziid);
     boolean updateFloor(Floor floor);
     List<Tiezi> getTieziByTieba(int tiebaid);
+
+    List<Tiezi> getTieziLimit(int tiebaid,int start,int rows);
 }

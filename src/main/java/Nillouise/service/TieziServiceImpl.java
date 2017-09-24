@@ -22,7 +22,6 @@ public class TieziServiceImpl implements TieziService
     @Override
     public List<Tiezi> getTieziByTieba(int tiebaid)
     {
-
         return tieziMapper.getTieziByTieba(tiebaid);
     }
 
@@ -63,5 +62,11 @@ public class TieziServiceImpl implements TieziService
     public Floor selectFloor(int floorid)
     {
         return floorMapper.selectFloor(floorid);
+    }
+
+    @Override
+    public List<Tiezi> getTieziLimit(int tiebaid,int start, int rows)
+    {
+        return tieziMapper.getTieziLimit(tiebaid,start,rows);
     }
 }

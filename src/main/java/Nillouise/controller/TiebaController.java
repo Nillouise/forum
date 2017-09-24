@@ -21,6 +21,8 @@ public class TiebaController
     TiebaService tiebaService;
     @Autowired
     TieziService tieziService;
+
+    //这个方法已经弃用了
     @RequestMapping("/{tiebaname}")
     public String page(@PathVariable("tiebaname")String tiebaname, Model model)
     {
@@ -45,7 +47,8 @@ public class TiebaController
         {
             return "/WEB-INF/notfoundtieba.jsp";
         }else{
-            model.addAttribute(alltiezi, tieziService.getTieziByTieba(tieba.getId()));
+//            model.addAttribute(alltiezi, tieziService.getTieziByTieba(tieba.getId()));
+            model.addAttribute(alltiezi, tieziService.getTieziLimit(tieba.getId(),0,10));
             model.addAttribute("tiebaid",tieba.getId());
             return "/WEB-INF/showtiezi.jsp";
         }

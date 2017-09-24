@@ -45,4 +45,9 @@
         select * from tiezi_inf where tiebaid = #{tiebaid}
     </select>
 
+    <select id="getTieziLimit" resultMap="tieziRM">
+          select * from tiezi_inf where tiebaid = #{tiebaid}  limit #{start},#{rows} order by id ASC
+    </select>
+
+
 </mapper>

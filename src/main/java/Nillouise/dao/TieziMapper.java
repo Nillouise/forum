@@ -22,5 +22,5 @@ public interface TieziMapper
 
     List<Tiezi> getTieziByTieba(@Param("tiebaid")int tiebaid);
 
-
+    List<Tiezi> getTieziLimit(@Param("tiebaid")int tiebaid,@Param("start")int start,@Param("rows")int rows);
 }
