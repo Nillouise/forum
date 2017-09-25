@@ -13,11 +13,13 @@ public class MyTag extends javax.servlet.jsp.tagext.SimpleTagSupport
     private String format;
     private String number;
 
-    public void setFormat(String format) {
+    public void setFormat(String format)
+    {
         this.format = format;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(String number)
+    {
         this.number = number;
     }
 

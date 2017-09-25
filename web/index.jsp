@@ -9,6 +9,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="https://journaldev.com/jsp/tlds/mytags" prefix="mytags"%>
+<%@ taglib uri="https://journaldev.com/jsp/tlds/pagetags" prefix="pp" %>
+
+
 <html>
   <head>
     <title>$Title$</title>
@@ -43,6 +46,9 @@
   test:
   <mytags:formatNumber number="100050.574" format="#,###.00"/><br><br>
   <mytags:formatNumber number="1234.567" format="$# ###.00"/><br><br>
+
+  <pp:pager pageModel="${pagemodel}" submitUrl="test?id={0}"/>
+
 
   <div style="position:fixed; left:0px; bottom:0px; width:100%; height:50px;  z-index:9999;">
       使用SSM+mysql开发的贴吧 项目github地址：<a href="https://github.com/Nillouise/forum">https://github.com/Nillouise/forum</a>

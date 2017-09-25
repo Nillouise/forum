@@ -1,15 +1,13 @@
 package Nillouise.model;
 
-/**
- * Created by win7x64 on 2017/9/24.
- */
+
 public class PageModel
 {
     //条目总数
     private int itemCount;
     //一页的条目数
     private int pageSize;
-    //当前页面
+    //当前页面，以1开始
     private int curPage;
 
 
