@@ -8,12 +8,12 @@ import java.io.IOException;
 
 public class PageTag extends javax.servlet.jsp.tagext.SimpleTagSupport
 {
-    String submitURL;
+    String submitUrl;
     PageModel pageModel;
 
-    public void setSubmitURL(String submitURL)
+    public void setSubmitUrl(String submitUrl)
     {
-        this.submitURL = submitURL;
+        this.submitUrl = submitUrl;
     }
 
     public void setPageModel(PageModel pageModel)
@@ -24,9 +24,9 @@ public class PageTag extends javax.servlet.jsp.tagext.SimpleTagSupport
     @Override
     public void doTag() throws JspException, IOException
     {
-        for (int i=1;i<pageModel.getMaxPageNumber();i++)
+        for (int i=1;i<=pageModel.getMaxPageNumber();i++)
         {
-            String curUrl = submitURL.replace("{0}",String.valueOf(i));
+            String curUrl = submitUrl.replace("{0}",String.valueOf(i));
             if(i!=pageModel.getCurPage())
             {
                 //输出到外面

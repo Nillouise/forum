@@ -43,7 +43,7 @@ public class IndexController
 
         List<Tieba> allTieba = tiebaService.getAllTieba();
         model.addAttribute("alltieba",allTieba);
-        PageModel p = new PageModel(3,10,2);
+        PageModel p = new PageModel(100,10,2);
         model.addAttribute("pagemodel",p);
 
         return  "/index.jsp";
