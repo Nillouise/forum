@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="pp" uri="https://journaldev.com/jsp/tlds/pagetags" %>
 <html>
 <head>
     <title>$Title$</title>
@@ -48,6 +49,7 @@
             </tr>
         </c:forEach>
     </table>
+    <pp:pager pageModel="${pagemodel}" submitUrl="/tieba?page={0}&tiebaname=${tiebaname}"/>
 
     <br/>
     <br/>

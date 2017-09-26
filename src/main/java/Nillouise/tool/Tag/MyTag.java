@@ -5,9 +5,7 @@ import javax.servlet.jsp.SkipPageException;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
-/**
- * Created by win7x64 on 2017/9/24.
- */
+
 public class MyTag extends javax.servlet.jsp.tagext.SimpleTagSupport
 {
     private String format;

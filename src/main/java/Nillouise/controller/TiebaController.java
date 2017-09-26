@@ -42,6 +42,7 @@ public class TiebaController
     @RequestMapping("")
     public String pageWitParam(String tiebaname,Integer page, Model model)
     {
+        if(page==null)page=1;
         Tieba tieba = tiebaService.getTieba(tiebaname);
         model.addAttribute("tiebaname",tiebaname);
         if(tieba==null)
@@ -50,10 +51,12 @@ public class TiebaController
         }else{
             int tieziCount = tieziService.getTieziCount(tieba.getId());
 
+            PageModel pageModel = new PageModel(tieziCount,10,page);
 
 //            model.addAttribute(alltiezi, tieziService.getTieziByTieba(tieba.getId()));
-            model.addAttribute(alltiezi, tieziService.getTieziLimit(tieba.getId(),0,10));
+            model.addAttribute(alltiezi, tieziService.getTieziLimit(tieba.getId(),(page-1)*10,10));
             model.addAttribute("tiebaid",tieba.getId());
+            model.addAttribute("pagemodel",pageModel);
             return "/WEB-INF/showtiezi.jsp";
         }
     }

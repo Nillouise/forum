@@ -30,9 +30,9 @@ public class PageTag extends javax.servlet.jsp.tagext.SimpleTagSupport
             if(i!=pageModel.getCurPage())
             {
                 //输出到外面
-                getJspContext().getOut().write("<span>"+"<a href="+curUrl+">"+String.valueOf(i)+"</a></span>");
+                getJspContext().getOut().write("<span>"+"<a href="+curUrl+">"+String.valueOf(i)+"</a></span>&nbsp;");
             }else{
-                getJspContext().getOut().write("<span>"+String.valueOf(i)+"</span>");
+                getJspContext().getOut().write("<span>"+String.valueOf(i)+"</span>&nbsp;");
             }
         }
     }
