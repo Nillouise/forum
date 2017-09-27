@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>userInfo</title>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 

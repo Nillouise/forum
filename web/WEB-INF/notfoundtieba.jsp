@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>创建贴吧</title>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <span style="color: #FF0000;">${tiebaname}</span>吧 还没有成立，希望创建一个吗？<br/>

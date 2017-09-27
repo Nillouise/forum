@@ -12,25 +12,11 @@
 <html>
 <head>
     <title>${tiebaname}</title>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
 </head>
 <body style="text-align: center">
-<div>
-      <span STYLE="float: right">
-          <c:if test="${null!=sessionScope['userinfo']}">
-              <a href="/userinfo"> ${userinfo.username}</a>
-              <a href="/logout">注销</a>
-          </c:if>
-          <c:if test="${null==sessionScope['userinfo']}">
-              <a href="/register">注册</a>
-              <a href="/login">登录</a>
-          </c:if>
-      </span>
-    <div style="float: left;">
-        <jsp:include page="/WEB-INF/gadget/searchTool.jsp"/>
-    </div>
-    <div style="clear: both;"></div>
-</div>
 
+<jsp:include page="gadget/topbar.jsp"/>
 
 <div>
     <form action="/tieba" method="get">
@@ -39,17 +25,29 @@
     </form>
 </div>
 
-<div style="max-width: 600px;margin: 0 auto;">
-    <table style="margin: 0px auto;">
-        <tr><th>Title</th><th>userid</th></tr>
-        <c:forEach items="${alltiezi}" var="t">
-            <tr>
-                <td><a href="/selecttiezi?tieziid=${t.id}">${t.title}</a></td>
-                <td>${t.user.username}</td>
-            </tr>
-        </c:forEach>
-    </table>
-    <pp:pager pageModel="${pagemodel}" submitUrl="/tieba?page={0}&tiebaname=${tiebaname}"/>
+
+    <div class="tiezi">
+        <div class="title">
+            <div class="top">Title</div>
+            <c:forEach items="${alltiezi}" var="t">
+                <div class="content">
+                    <a href="/selecttiezi?tieziid=${t.id}">${t.title}</a>
+                </div>
+            </c:forEach>
+        </div>
+        <div class="user">
+            <div class="top">user</div>
+            <c:forEach items="${alltiezi}" var="t">
+                <div class="content">
+                        ${t.user.username}
+                </div>
+            </c:forEach>
+        </div>
+        <div style="clear: both;"></div>
+        <pp:pager pageModel="${pagemodel}" submitUrl="/tieba?page={0}&tiebaname=${tiebaname}"/>
+    </div>
+
+    <div style="max-width: 600px;margin: 0 auto;">
 
     <br/>
     <br/>

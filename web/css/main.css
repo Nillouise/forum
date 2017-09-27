@@ -1,3 +1,4 @@
+/* 设置topbar的式样*/
 .topbar
 {
     max-width: 800px;
@@ -14,3 +15,47 @@
     float: right;
 }
 
+/*设置看帖的布局*/
+.tiezi
+{
+    max-width: 600px;margin: 0 auto;
+}
+
+.tiezi .title
+{
+    width: 80%;
+    float: left;
+    text-align: left;
+}
+
+.tiezi .title .top
+{
+    width:100%;
+    /*width 不重新设置就会继承*/
+    background-color: blue;
+    color: #FFF;
+    clear: both;
+}
+
+.tiezi .user
+{
+    width: 18%;
+    margin-left: 2%;
+    float: left;
+    text-align: left;"
+}
+.tiezi .user .top
+{
+    background-color: blue;
+    color: #FFF;
+    clear: both;
+}
+.tiezi .content
+{
+    clear:both;
+}
+
+/*.tiezi .user .user*/
+/*或*/
+/*tiezi .title .title */
+/*这种嵌套使用同一个名字会导致出问题，因为他是算子孙元素而不是子元素*/

@@ -2,29 +2,11 @@
 <html>
   <head>
     <title>用户信息</title>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
   </head>
   <body style="text-align: center">
 
   <div>
-
-      <div style="max-width: 800px;margin: 0 auto;">
-          <div>
-              <span STYLE="float: right">
-                  <c:if test="${null!=sessionScope['userinfo']}">
-                      <a href="/userinfo"> ${userinfo.username}</a>
-                      <a href="/logout">注销</a>
-                  </c:if>
-                  <c:if test="${null==sessionScope['userinfo']}">
-                      <a href="/register">注册</a>
-                      <a href="/login">登录</a>
-                  </c:if>
-              </span>
-              <div style="float: left;">
-                  <jsp:include page="WEB-INF/gadget/searchTool.jsp"/>
-              </div>
-          </div>
-          <div style="clear: both;"></div>
-      </div>
       <jsp:include page="WEB-INF/gadget/topbar.jsp"/>
       <div>
           现在有的贴吧：

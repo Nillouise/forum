@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Register</title>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div style="text-align: center">

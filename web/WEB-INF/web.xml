@@ -48,6 +48,7 @@
             <taglib-uri>https://journaldev.com/jsp/tlds/pagetags</taglib-uri>
             <taglib-location>/WEB-INF/pageindex.tld</taglib-location>
         </taglib>
+
         <jsp-property-group>
             <!-- 配置拦截所有的jsp页面  -->
             <url-pattern>*.jsp</url-pattern>

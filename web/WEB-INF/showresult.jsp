@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>结果</title>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div style="width: 740px;clear: both;

@@ -10,6 +10,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/json2.js"></script>
     <title>${tiezi.title}</title>

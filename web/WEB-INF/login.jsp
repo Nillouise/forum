@@ -12,6 +12,7 @@
 <html>
 <head>
     <title><spring:message code="logintitle"></spring:message></title>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <%--好像一定要加name，才会post属性到服务器 --%>
