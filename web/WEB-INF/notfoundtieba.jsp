@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>创建贴吧</title>
 </head>
 <body>
 <span style="color: #FF0000;">${tiebaname}</span>吧 还没有成立，希望创建一个吗？<br/>

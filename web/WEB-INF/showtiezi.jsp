@@ -11,7 +11,7 @@
 <%@ taglib prefix="pp" uri="https://journaldev.com/jsp/tlds/pagetags" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>${tiebaname}</title>
 </head>
 <body style="text-align: center">
 <div>
