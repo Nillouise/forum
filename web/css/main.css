@@ -1,0 +1,16 @@
+.topbar
+{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.topbar .search
+{
+    float: left;
+}
+
+.topbar .status
+{
+    float: right;
+}
+

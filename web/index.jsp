@@ -1,17 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: win7x64
-  Date: 2017/8/23
-  Time: 7:06
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib uri="https://journaldev.com/jsp/tlds/mytags" prefix="mytags"%>
-<%@ taglib uri="https://journaldev.com/jsp/tlds/pagetags" prefix="pp" %>
-
-
 <html>
   <head>
     <title>用户信息</title>
@@ -38,6 +25,7 @@
           </div>
           <div style="clear: both;"></div>
       </div>
+      <jsp:include page="WEB-INF/gadget/topbar.jsp"/>
       <div>
           现在有的贴吧：
           <div style="width: 60%;margin: 0 auto;">
