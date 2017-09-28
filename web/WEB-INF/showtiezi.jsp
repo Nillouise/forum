@@ -62,6 +62,7 @@
     </div>
 </div>
 <div style="position:fixed; left:0px; bottom:0px; width:100%; height:50px;  z-index:9999;">
+<%--<div style="margin-bottom: ">    --%>
     使用SSM+mysql开发的贴吧 项目github地址：<a href="https://github.com/Nillouise/forum">https://github.com/Nillouise/forum</a>
 </div>
 </body>
