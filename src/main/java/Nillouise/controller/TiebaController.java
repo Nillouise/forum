@@ -51,13 +51,15 @@ public class TiebaController
         }else{
             int tieziCount = tieziService.getTieziCount(tieba.getId());
 
-            PageModel pageModel = new PageModel(tieziCount,10,page);
+            PageModel pageModel = new PageModel(tieziCount,20,page);
 
 //            model.addAttribute(alltiezi, tieziService.getTieziByTieba(tieba.getId()));
-            model.addAttribute(alltiezi, tieziService.getTieziLimit(tieba.getId(),(page-1)*10,10));
+            model.addAttribute(alltiezi, tieziService.getTieziLimit(tieba.getId(),(page-1)*20,20));
             model.addAttribute("tiebaid",tieba.getId());
+            model.addAttribute("tieba",tieba);
             model.addAttribute("pagemodel",pageModel);
-            return "/WEB-INF/showtiezi.jsp";
+//            return "/WEB-INF/showtiezi.jsp";//采用新版界面
+            return "/WEB-INF/tieba/banmian.jsp";
         }
     }
 

@@ -28,31 +28,43 @@
             style="box-sizing:content-box;padding:0px;list-style:none;margin:8px 13px 0px;background:rgb(235, 235, 235);width:1px;height:13px;float:left;font-size:13px;"></li><li
             style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;float:left;font-size:13px;"><div
             style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;"><a
-            href="https://www.baidu.com/?tn=SE_hldp03480_530ir7bs"
+            href="/"
             style="box-sizing:content-box;background-color:transparent;color:rgb(51, 51, 51);text-decoration:underline;font-family:Arial;"
-            target="_blank">百度首页</a></div></li><li
-            style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;position:relative;float:left;font-size:13px;"><div
-            style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;"><a
-            href="http://tieba.baidu.com/home/main?id=e19de6ae8be5ba9fe79a84e8999ae697a0983f&amp;fr=userbar"
-            style="box-sizing:content-box;background-color:transparent;color:rgb(51, 51, 51);text-decoration:underline;font-family:Arial;"
-            title="点击到个人中心"><span style="box-sizing:content-box;">残废的虚无</span><i
-            style="box-sizing:content-box;display:inline-block;width:7px;height:16px;vertical-align:bottom;margin-left:3px;background:url(&quot;http://tb1.bdstatic.com//tb2.bdstatic.com/tb/img/i-arrow-down_2c2c491.png&quot;) 0px 2px no-repeat;"></i></a></div></li><li
-            style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;position:relative;float:left;font-size:13px;"><div
-            style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;"><a
-            href="http://tieba.baidu.com/f?ie=utf-8&amp;kw=java&amp;fr=search&amp;red_tag=i3569842091#"
-            style="box-sizing:content-box;background-color:transparent;color:rgb(51, 51, 51);text-decoration:underline;font-family:Arial;">消息<i
-            style="box-sizing:content-box;display:inline-block;width:7px;height:16px;vertical-align:bottom;margin-left:3px;background:url(&quot;http://tb1.bdstatic.com//tb2.bdstatic.com/tb/img/i-arrow-down_2c2c491.png&quot;) 0px 2px no-repeat;"></i></a></div></li><li
-            style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;position:relative;float:left;font-size:13px;"><div
-            style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;"><a
-            href="http://tieba.baidu.com/f?ie=utf-8&amp;kw=java&amp;fr=search&amp;red_tag=i3569842091#"
-            style="box-sizing:content-box;background-color:transparent;color:rgb(51, 51, 51);text-decoration:underline;font-family:Arial;"><i
-            style="box-sizing:content-box;display:inline-block;width:16px;height:20px;vertical-align:bottom;margin-right:4px;background:url(&quot;http://tb1.bdstatic.com//tb2.bdstatic.com/tb/img/i-member_162dd82.png&quot;) 0px 0px no-repeat;"></i>会员<i
-            style="box-sizing:content-box;display:inline-block;width:7px;height:16px;vertical-align:bottom;margin-left:3px;background:url(&quot;http://tb1.bdstatic.com//tb2.bdstatic.com/tb/img/i-arrow-down_2c2c491.png&quot;) 0px 2px no-repeat;"></i></a></div></li><li
-            style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;position:relative;float:left;font-size:13px;"><div
-            style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;"><a
-            href="http://tieba.baidu.com/f?ie=utf-8&amp;kw=java&amp;fr=search&amp;red_tag=i3569842091#"
-            style="box-sizing:content-box;background-color:transparent;color:rgb(51, 51, 51);text-decoration:underline;font-family:Arial;">更多<i
-            style="box-sizing:content-box;display:inline-block;width:7px;height:16px;vertical-align:bottom;margin-left:3px;background:url(&quot;http://tb1.bdstatic.com//tb2.bdstatic.com/tb/img/i-arrow-down_2c2c491.png&quot;) 0px 2px no-repeat;"></i></a></div></li></ul></div>
+            target="_blank">首页</a></div></li>
+
+        <c:if test="${null!=sessionScope['userinfo']}">
+                <li
+                    style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;position:relative;float:left;font-size:13px;"><div
+                    style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;"><a
+                    href="/userinfo"
+                    style="box-sizing:content-box;background-color:transparent;color:rgb(51, 51, 51);text-decoration:underline;font-family:Arial;"
+                    title="点击到个人中心"><span style="box-sizing:content-box;">${userinfo.username}</span><i
+                    style="box-sizing:content-box;display:inline-block;width:7px;height:16px;vertical-align:bottom;margin-left:3px;background:url(&quot;http://tb1.bdstatic.com//tb2.bdstatic.com/tb/img/i-arrow-down_2c2c491.png&quot;) 0px 2px no-repeat;"></i></a></div></li>
+
+            <li
+                    style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;position:relative;float:left;font-size:13px;">
+                <div
+                        style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;">
+                                  <a href="/logout">注销</a>
+                </div>
+            </li>
+        </c:if>
+
+                  <c:if test="${null==sessionScope['userinfo']}">
+                      <li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;position:relative;float:left;font-size:13px;">
+                          <div
+                                  style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;">
+                              <a href="/register">注册</a></div>
+                      </li>
+                      <li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;position:relative;float:left;font-size:13px;">
+                          <div style="box-sizing:content-box;margin:0px;padding:4px 11px 7px;">
+                      <a href="/login">登录</a>
+                          </div>
+                      </li>
+                  </c:if>
+
+
+    </ul></div>
 <div style="box-sizing:content-box;margin:0 auto;padding:0px;background-color:rgb(220, 239, 254);">
     <div style="box-sizing:content-box;margin:0px;padding:0px;padding-bottom:50px;">
 
@@ -68,18 +80,24 @@
 <div style="clear:both"></div>
     <div>
 
+
 <!-- 显示进入贴吧按钮-->
 <div style="margin: 0 auto;max-width: 600px;">
-    <input type="text" style="float:left;width: 392px;height:30px;">
+<form action="/tieba" method="get">
+    <input type="text" style="float:left;width: 392px;height:30px;" name="tiebaname" value="${tieba.tiebaname}">
                         <span style="box-sizing:content-box;text-decoration:none;float:left;width:104px;height:40px;display:block;margin:0 auto;">
-                            <a href="http://tieba.baidu.com/f?ie=utf-8&amp;kw=java&amp;fr=search&amp;red_tag=i3569842091#"
-                               style="float:left;box-sizing:content-box;display:inline;text-decoration:none;height:39px;line-height:39px;overflow:hidden;padding:0px;border:1px solid rgb(51, 136, 255);font-size:16px;color:rgb(255, 255, 255);background:rgb(51, 136, 255);width:104px;text-align:center;margin-left:0px;cursor:pointer;font-family:Arial;border-top:0px;border-right:0px;border-left:0px;">进入贴吧</a>
+                            <input type="submit" value="进入贴吧"
+                                    style="float:left;box-sizing:content-box;display:inline;text-decoration:none;height:39px;line-height:39px;overflow:hidden;padding:0px;border:1px solid rgb(51, 136, 255);font-size:16px;color:rgb(255, 255, 255);background:rgb(51, 136, 255);width:104px;text-align:center;margin-left:0px;cursor:pointer;font-family:Arial;border-top:0px;border-right:0px;border-left:0px;">
+
+                            </input>
                     </span>
                     <span style="box-sizing:content-box;text-decoration:none;float:left;width:104px;height:40px;display:block;margin:0 auto;">
-                        <a href="http://tieba.baidu.com/f?ie=utf-8&amp;kw=java&amp;fr=search&amp;red_tag=i3569842091#"
-                           style="border:1px solid rgb(51, 136, 255);background-color:transparent;box-sizing:content-box;float:left;font-family:Arial;line-height:38px;overflow:hidden;padding:0px;color:rgb(51, 136, 255);font-size:16px;height:38px;display:inline;width:102px;text-align:center;margin-left:0px;cursor:pointer;text-decoration:none;">全吧搜索</a>
+                        <a href="/search"
+                           style="border:1px solid rgb(51, 136, 255);background-color:transparent;box-sizing:content-box;float:left;font-family:Arial;line-height:38px;overflow:hidden;padding:0px;color:rgb(51, 136, 255);font-size:16px;height:38px;display:inline;width:102px;text-align:center;margin-left:0px;cursor:pointer;text-decoration:none;">
+                            全吧搜索
+                        </a>
                     </span>
-
+</form>
 </div>
     </div>
 <div style="clear:both"></div>
@@ -141,10 +159,10 @@
        </div>
 
        <div style="box-sizing:content-box;padding:0px;height:40px;position:relative;margin:0px;">
-           <a href="http://tieba.baidu.com/f?kw=java&amp;ie=utf-8"
+           <a href=""
               style="box-sizing:content-box;background-color:transparent;text-decoration:none;color:rgb(51, 51, 51);font-size:22px;margin-right:0px;float:left;margin-top:3px;"
               title="">
-               java吧
+               ${tieba.tiebaname}吧
            </a>
                                  <div style="box-sizing:content-box;margin:0px;padding:0px;display:inline-block;float:left;">
                <div style="box-sizing:content-box;margin:0px;padding:0px;">
@@ -159,20 +177,14 @@
 </div>           </div>
        </div>
 
-       <p style="padding-right:30px;margin:0px;box-sizing:content-box;padding:0px;font-size:14px;float:left;color:rgb(76, 76, 76);position:relative;max-width:280px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;margin-top:0px;">有问题为什么不先问问隔壁C++吧呢？</p>
+       <p style="padding-right:30px;margin:0px;box-sizing:content-box;padding:0px;font-size:14px;float:left;color:rgb(76, 76, 76);position:relative;max-width:280px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;margin-top:0px;"></p>
 
        <div style="box-sizing:content-box;margin:0px;padding:0px;position:relative;float:left;font-size:14px;height:20px;">
            <ul style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;zoom:1;">
                                   <li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;display:inline;">
                                           </li>
-                   <li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;display:inline;">
-                       <span style="box-sizing:content-box;color:rgb(170, 170, 170);">目录：</span>
-                   </li>
-                   <li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;display:inline;">
-                                                  <a href="http://tieba.baidu.com/f/fdir?fd=%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF&amp;ie=utf-8&amp;sd=%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"
-                                                     style="box-sizing:content-box;background-color:transparent;color:rgb(45, 100, 179);text-decoration:none;"
-                                                     target="_blank">程序设计</a>
-                                          </li>
+
+
                           <span style="list-style:none;display:table;clear:both;"> </span></ul>
        </div>
    <span style="line-height:normal;font-family:STHeiti, &quot;Microsoft Yahei&quot;, Arial, SimSun;display:table;clear:both;"> </span></div>
@@ -225,8 +237,10 @@
             <div style="box-sizing:content-box;margin:0px 20px;padding:10px 0px;">
 
                     <div style="box-sizing:content-box;margin:0px;padding:0px;float:left;min-height:1px;width:70px;">
+
+                        <%-- 显示回复数目--%>
                 <span style="box-sizing:content-box;display:inline-block;text-align:center;width:50px;height:30px;line-height:26px;margin-right:20px;vertical-align:middle;"
-                      title="回复">18</span>
+                      title="回复"></span>
             </div>
                 <div style="box-sizing:content-box;margin:0px;padding:0px;position:relative;min-height:1px;margin-left:70px;">
             <div style="box-sizing:content-box;margin:0px;padding:0px;zoom:1;">
@@ -316,16 +330,16 @@
     <!--<span style="display:table;clear:both;"> </span></div>    -->
 
     <!-- 显示帖子数目 -->
-    <div
-            style="box-sizing:content-box;margin:0px;padding:0px;color:rgb(153, 153, 153);">
-        <div style="box-sizing:content-box;margin:0px;padding:0px;width:650px;float:left;margin-top:7px;margin-left:18px;">
-                            共有主题数<span style="box-sizing:content-box;color:rgb(247, 77, 74);">384151</span>个，贴子数
-                <span style="box-sizing:content-box;color:rgb(247, 77, 74);">7541400</span>篇
-                <a href="http://tieba.baidu.com/bawu2/platform/listMemberInfo?word=java&amp;ie=utf-8"
-                   style="box-sizing:content-box;background-color:transparent;color:rgb(45, 100, 179);text-decoration:none;"
-                   target="_blank">爪哇猿</a>数<span style="box-sizing:content-box;color:rgb(247, 77, 74);">651398</span>
-                    </div>
-    </div>
+    <%--<div--%>
+            <%--style="box-sizing:content-box;margin:0px;padding:0px;color:rgb(153, 153, 153);">--%>
+        <%--<div style="box-sizing:content-box;margin:0px;padding:0px;width:650px;float:left;margin-top:7px;margin-left:18px;">--%>
+                            <%--共有主题数<span style="box-sizing:content-box;color:rgb(247, 77, 74);">384151</span>个，贴子数--%>
+                <%--<span style="box-sizing:content-box;color:rgb(247, 77, 74);">7541400</span>篇--%>
+                <%--<a href="http://tieba.baidu.com/bawu2/platform/listMemberInfo?word=java&amp;ie=utf-8"--%>
+                   <%--style="box-sizing:content-box;background-color:transparent;color:rgb(45, 100, 179);text-decoration:none;"--%>
+                   <%--target="_blank">爪哇猿</a>数<span style="box-sizing:content-box;color:rgb(247, 77, 74);">651398</span>--%>
+                    <%--</div>--%>
+    <%--</div>--%>
 <span style="display:table;clear:both;"> </span></div>
 </div>
 
@@ -698,12 +712,14 @@
 
 
 
-
+<%--显示发表帖子--%>
 			<div style="box-sizing:content-box;margin:0px;padding:0px;margin-left:0px;">
+                <form action="/addthread.do" method="post" name="form">
+                                <input type="hidden" name="tiebaid" value="${tieba.id}">
                                 <div style="box-sizing:content-box;margin:0px;padding:0px;position:relative;padding-bottom:15px;">
 
                     <div style="box-sizing:content-box;margin:0px;padding:0px;">
-                        <input type="text" style="width: 720px;">
+                        <input type="text" style="width: 720px;" name="title">
                         <!--<div style="box-sizing:content-box;margin:0px;padding:0px;position:absolute;color:rgb(191, 191, 191);cursor:text;top:1px;left:10px;height:30px;line-height:30px;">请填写标题</div>-->
 
                         <span style="box-sizing:content-box;display:inline-block;width:48px;height:20px;cursor:pointer;position:relative;top:5px;margin-left:3px;"></span>
@@ -714,6 +730,7 @@
 
 
                                 <div style="box-sizing:content-box;margin:0px;padding:0px;position:relative;padding-bottom:15px;">
+
 
                     <div style="box-sizing:content-box;margin:0px;padding:0px;border:1px solid rgb(223, 223, 223);background:rgb(250, 250, 250);width:720px;">
                         <div style="box-sizing:content-box;margin:0px;padding:0px;position:relative;width:720px;"><div
@@ -732,7 +749,7 @@
                                     style="outline:none;margin:0px;box-sizing:content-box;min-height:220px;width:708px;overflow-y:auto;padding:0px 0px 0px 0px;word-wrap:break-word;font-size:14px;overflow-x:hidden;background-color:rgb(255, 255, 255);z-index:0;">
                             <p
                                     style="box-sizing:content-box;padding:0px;margin:5px 0px;"></p>
-                        <textarea style="width: 100%;min-height: 220px; border: 0px;"></textarea>
+                        <textarea style="width: 100%;min-height: 220px; border: 0px;" name="content"></textarea>
 
 
                         </div></div><div
@@ -743,19 +760,14 @@
                     <div style="box-sizing:content-box;padding:0px;margin:6px 6px -6px;color:red;"></div>
                 </div>
 
-                                <div style="box-sizing:content-box;margin:0px;padding:0px;display:inline-block;margin-bottom:12px;height:20px;line-height:24px;margin-right:10px;position:relative;">
-                    <span style="box-sizing:content-box;display:inline-block;max-width:100%;"> 发表后自动分享本贴</span>
-                </div>
-
-
-
-
                                 <div style="box-sizing:content-box;padding:0px;zoom:1;margin:0px 240px 0px 0px;padding-bottom:15px;height:28px;">
                     <div style="box-sizing:content-box;margin:0px;padding:0px;">
-                        <a href="http://tieba.baidu.com/f?ie=utf-8&amp;kw=java&amp;fr=search&amp;red_tag=i3569842091#"
-                           style="border-bottom-color:rgb(55, 130, 240);box-sizing:content-box;padding:0px 15px;text-decoration:none;border-radius:2px;border:1px solid transparent;cursor:pointer;background:rgb(57, 139, 252);color:rgb(255, 255, 255);display:inline-block;height:28px;line-height:28px;overflow:hidden;font-size:14px;text-align:center;margin-left:20px;"
-                           title="Shift+Enter快捷发表"><span style="box-sizing:content-box;"><em
-                                style="box-sizing:content-box;font-style:normal;">尾巴发表</em></span></a>
+                        <span style="box-sizing:content-box;">
+                            <input type="submit" value="发表"
+                                   style="border-bottom-color:rgb(55, 130, 240);box-sizing:content-box;padding:0px 15px;text-decoration:none;border-radius:2px;border:1px solid transparent;cursor:pointer;background:rgb(57, 139, 252);color:rgb(255, 255, 255);display:inline-block;height:28px;line-height:28px;overflow:hidden;font-size:14px;text-align:center;margin-left:20px;"
+
+                            >
+                        </span>
                         <span style="box-sizing:content-box;display:block;float:left;width:16px;height:27px;margin:0px 5px;background:url(&quot;http://tb1.bdstatic.com//tb2.bdstatic.com/tb/img/poster/loading_9c92dd5.gif&quot;) -20px 5px no-repeat;"></span>
 
 
@@ -763,6 +775,7 @@
                     </div>
                 <span style="display:table;clear:both;"> </span></div>
 
+            </form>
             </div>
 
 
