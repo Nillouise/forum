@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Evernote Export</title>
+    <title>${tieba.tiebaname}吧</title>
     <basefont face="微软雅黑" size="2"/>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta name="exporter-version"
