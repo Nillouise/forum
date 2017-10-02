@@ -171,7 +171,7 @@
                 style="box-sizing:content-box;margin:0px;padding:0px;zoom:1;background-color:rgb(242, 244, 247);background-image:-webkit-linear-gradient(top, rgb(245, 247, 250), rgb(242, 244, 247));border-left:1px solid rgb(229, 229, 229);border-top:1px solid rgb(229, 229, 229);border-right:1px solid rgb(229, 229, 229);margin-right:-2px;">        <div
                 style="line-height:normal;zoom:1;padding:15px 0px 0px 100px;box-sizing:content-box;float:left;margin:0px;position:relative;font-family:STHeiti, &quot;Microsoft Yahei&quot;, Arial, SimSun;height:64px;padding-left:100px;padding-top:17px;">                                    <div
                 style="overflow:hidden;top:0px;box-sizing:content-box;left:0px;position:absolute;display:block;background:rgb(255, 255, 255);border:1px solid rgba(0, 0, 0, 0.1);padding:1px;height:48px;width:48px;margin:15px 30px;"><a
-                href="http://tieba.baidu.com/f?kw=java&amp;ie=utf-8"
+                href="/"
                 style="box-sizing:content-box;background-color:transparent;color:rgb(45, 100, 179);text-decoration:none;outline:0px;">                    <img
                 src="/images/tieba/timg.jpg" type="image/jpeg" data-filename="timg.jpg" height="48"
                 style="box-sizing:content-box;border:0px;display:block;overflow:hidden;width:48px;height:48px;" width="48"/>                    </a></div><div
@@ -189,7 +189,7 @@
                 style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;height:46px;line-height:46px;float:left;display:inline;margin-left:-2px;">
 	<div style="box-sizing:content-box;margin:0px;padding:0px;">
 		<p style="box-sizing:content-box;margin:0px;padding:0px;display:block;background-image:url(&quot;http://tb2.bdstatic.com/tb/static-pcommon/img/nav_bright.png?t=1461667425992&quot;);background-repeat:no-repeat;background-position:right -150px;">
-			<a href="http://tieba.baidu.com/f?kw=java&amp;ie=utf-8&amp;tp=0"
+			<a href="/"
                style="box-sizing:content-box;outline:0px;color:rgb(92, 101, 115);text-decoration:none;display:block;padding:0px 22px;position:relative;background:url(&quot;http://tb2.bdstatic.com/tb/static-pcommon/widget/tbnav_bright/img/nav_icon_bright_ab51637.png&quot;) no-repeat;padding-left:43px;background-position:20px -85px;">看贴</a>
 		</p>
 	</div>
@@ -452,8 +452,7 @@
                 style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;float:left;height:24px;line-height:24px;">
 	<li style="font-style:normal;font-family:Verdana;list-style:none;box-sizing:content-box;line-height:22px;font-size:12px;padding:0px;font-variant:normal;font-weight:normal;font-stretch:normal;display:inline;float:left;margin:0px 0px 0px -6px;"></li>
 	<li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;float:left;display:inline;color:rgb(102, 102, 102);margin-left:8px;"><span
-            style="box-sizing:content-box;color:red;margin-right:3px;">15</span>回复贴，共<span
-            style="box-sizing:content-box;color:red;">1</span>页</li>
+            style="box-sizing:content-box;color:red;margin-right:3px;">${tiezi.number}</span>回复贴</li>
 	<li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;float:left;display:inline;color:rgb(102, 102, 102);"></li>
 </ul>
 </div><div style="box-sizing:content-box;margin:0px;padding:0px;float:right;line-height:24px;margin-right:20px;display:inline;"><a
@@ -474,12 +473,9 @@
 
 
 </div></div>
-
-
-
-
-
-<%--<pp:pager pageModel="${pagemodel}" submitUrl="/selecttiezi?tieziid=${tiezi.id}"></pp:pager>--%>
+			<div style="font-size: 15px;position: relative;left:30px">
+<pp:pager pageModel="${pagemodel}" submitUrl="/selecttiezi?tieziid=${tiezi.id}&page={0}"></pp:pager>
+			</div>
 
 
 			<form action="/addfloor.do" method="post" name="floor">

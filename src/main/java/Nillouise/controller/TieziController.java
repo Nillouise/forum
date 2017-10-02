@@ -88,16 +88,19 @@ public class TieziController
     }
 
     @RequestMapping("/selecttiezi")
-    public String selectTiezi(Model model, @RequestParam Integer tieziid)
+    public String selectTiezi(Model model, @RequestParam Integer tieziid,@RequestParam(name = "page",defaultValue = "0",required = false) Integer page)
     {
+        if(page==null)page=0;
         if(tieziid==null)
         {
             return "redirect:/index.jsp";
         }
+        //暂时不做帖子的分页了，当初设计不好，现在做起来有点麻烦
         Tiezi tiezi = tieziService.getTiezi(tieziid);
+//        tiezi.setFloors(tieziService.get);
         model.addAttribute("tiezi",tiezi);
-//        PageModel pageModel = new PageModel(tiezi.getFloors());
-
+        PageModel pageModel = new PageModel(tiezi.getNumber(),30,page);
+        model.addAttribute("pagemodel",pageModel);
         return "WEB-INF/tieba/tiezi.jsp";
     }
 
@@ -111,7 +114,6 @@ public class TieziController
         {
             tiezi = tieziService.getTiezi(tieziid);
             floor.setTieziid(tiezi.getId());
-
         }
         if(tiezi != null)
         {

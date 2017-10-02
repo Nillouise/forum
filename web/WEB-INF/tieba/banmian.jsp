@@ -711,6 +711,11 @@
             <div style="box-sizing:content-box;margin:0px;padding:0px;"></div>
 
 
+            			<div style="font-size: 15px;position: relative;left:30px">
+<pp:pager pageModel="${pagemodel}" submitUrl="/tieba?tiebaname=${tieba.tiebaname}&page={0}"></pp:pager>
+			</div>
+
+
 
 <%--显示发表帖子--%>
 			<div style="box-sizing:content-box;margin:0px;padding:0px;margin-left:0px;">
