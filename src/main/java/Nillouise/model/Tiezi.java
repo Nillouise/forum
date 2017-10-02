@@ -15,6 +15,18 @@ public class Tiezi
     private User user;
     private int tiebaid;
 
+    private int number;
+
+    public int getNumber()
+    {
+        return number;
+    }
+
+    public void setNumber(int number)
+    {
+        this.number = number;
+    }
+
     public int getTiebaid()
     {
         return tiebaid;

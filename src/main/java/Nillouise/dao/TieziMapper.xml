@@ -4,13 +4,24 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Nillouise.dao.TieziMapper">
 
+    <!-- 感觉计算自己的内容大小，是不可或缺的一部分，一开始就这么设计会比较好-->
+    <!--这里好像一定要加上resultTypeInteger才行 -->
+    <select id="floorsnumber" resultType="Integer">
+        select count(*) from floor_inf WHERE tieziid= #{id}
+    </select>
+
     <resultMap id="tieziRM" type="Nillouise.model.Tiezi">
         <id property="id" column="id"/>
         <result property="title" column="title"/>
         <result property="userid" column="userid"/>
         <result property="tiebaid" column="tiebaid"/>
+
         <association property="user" column="userid" fetchType="lazy" select="Nillouise.dao.UserMapper.selectUser">
         </association>
+
+        <association property="number" column="id"  select="floorsnumber">
+        </association>
+
         <collection property="floors" javaType="ArrayList"
                     column="id" ofType="Nillouise.model.Tiezi"
                     fetchType="lazy" select="Nillouise.dao.FloorMapper.getFloors">

@@ -207,7 +207,7 @@
                 style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;float:left;height:24px;line-height:24px;">
 	<li style="font-style:normal;font-family:Verdana;list-style:none;box-sizing:content-box;line-height:22px;font-size:12px;padding:0px;font-variant:normal;font-weight:normal;font-stretch:normal;display:inline;float:left;margin:0px 0px 0px -6px;"></li>
 	<li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;float:left;display:inline;color:rgb(102, 102, 102);margin-left:8px;"><span
-            style="box-sizing:content-box;color:red;margin-right:3px;">15</span>回复贴，共<span
+            style="box-sizing:content-box;color:red;margin-right:3px;">${tiezi.number}</span>回复贴，共<span
             style="box-sizing:content-box;color:red;">1</span>页</li>
 	<li style="box-sizing:content-box;margin:0px;padding:0px;list-style:none;float:left;display:inline;color:rgb(102, 102, 102);"></li>
 </ul>
@@ -479,7 +479,7 @@
 
 
 
-
+<%--<pp:pager pageModel="${pagemodel}" submitUrl="/selecttiezi?tieziid=${tiezi.id}"></pp:pager>--%>
 
 
 			<form action="/addfloor.do" method="post" name="floor">

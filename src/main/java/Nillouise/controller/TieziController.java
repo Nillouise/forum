@@ -1,6 +1,7 @@
 package Nillouise.controller;
 
 import Nillouise.model.Floor;
+import Nillouise.model.PageModel;
 import Nillouise.model.Tiezi;
 import Nillouise.model.User;
 import Nillouise.service.TieziService;
@@ -95,9 +96,9 @@ public class TieziController
         }
         Tiezi tiezi = tieziService.getTiezi(tieziid);
         model.addAttribute("tiezi",tiezi);
+//        PageModel pageModel = new PageModel(tiezi.getFloors());
 
-
-        return "WEB-INF/tiezi.jsp";
+        return "WEB-INF/tieba/tiezi.jsp";
     }
 
     @RequestMapping("/addfloor.do")
@@ -110,9 +111,11 @@ public class TieziController
         {
             tiezi = tieziService.getTiezi(tieziid);
             floor.setTieziid(tiezi.getId());
+
         }
         if(tiezi != null)
         {
+
             tieziService.addFloor(user,tieziid,floor);
             return "redirect:/selecttiezi?tieziid="+tiezi.getId();
         }else{
