@@ -770,8 +770,6 @@
                         </span>
                         <span style="box-sizing:content-box;display:block;float:left;width:16px;height:27px;margin:0px 5px;background:url(&quot;http://tb1.bdstatic.com//tb2.bdstatic.com/tb/img/poster/loading_9c92dd5.gif&quot;) -20px 5px no-repeat;"></span>
 
-
-
                     </div>
                 <span style="display:table;clear:both;"> </span></div>
 

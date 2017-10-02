@@ -1,3 +1,4 @@
+<%--handnote 把文件后缀名硬写在代码里，将来换渲染技术时可能会很麻烦 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>

@@ -33,4 +33,12 @@ public class TestController
         return "/WEB-INF/tieba/banmian.jsp";
     }
 
+    @RequestMapping("/tiezi")
+    public String tiezi(Model model)
+    {
+        Tiezi tiezi = tieziService.getTiezi(1);
+        model.addAttribute("tiezi",tiezi);
+        return "/WEB-INF/tieba/tiezi.jsp";
+    }
+
 }
